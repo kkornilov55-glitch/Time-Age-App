@@ -62,6 +62,8 @@
             panel2 = new Panel();
             label5 = new Label();
             tabPage1 = new TabPage();
+            ResultSecondsL = new Label();
+            ErrorL2 = new Label();
             MinutsTB = new TextBox();
             SecondsTB = new TextBox();
             CalcB2 = new Button();
@@ -80,8 +82,6 @@
             label12 = new Label();
             label13 = new Label();
             BackB1 = new Button();
-            ErrorL2 = new Label();
-            ResultSecondsL = new Label();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
@@ -347,6 +347,7 @@
             // 
             // questionsT_SB
             // 
+            questionsT_SB.Cursor = Cursors.Help;
             questionsT_SB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             questionsT_SB.Location = new Point(366, 427);
             questionsT_SB.Name = "questionsT_SB";
@@ -406,6 +407,7 @@
             // 
             // SecTB
             // 
+            SecTB.Cursor = Cursors.IBeam;
             SecTB.Font = new Font("Segoe UI", 15F);
             SecTB.Location = new Point(3, 129);
             SecTB.MaxLength = 10;
@@ -454,9 +456,29 @@
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Время ➝ секунды";
             // 
+            // ResultSecondsL
+            // 
+            ResultSecondsL.BackColor = Color.White;
+            ResultSecondsL.Font = new Font("Segoe UI", 15F);
+            ResultSecondsL.Location = new Point(238, 129);
+            ResultSecondsL.Name = "ResultSecondsL";
+            ResultSecondsL.Size = new Size(154, 42);
+            ResultSecondsL.TabIndex = 26;
+            ResultSecondsL.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ErrorL2
+            // 
+            ErrorL2.BackColor = Color.White;
+            ErrorL2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            ErrorL2.ForeColor = Color.Red;
+            ErrorL2.Location = new Point(5, 322);
+            ErrorL2.Name = "ErrorL2";
+            ErrorL2.Size = new Size(385, 64);
+            ErrorL2.TabIndex = 25;
+            // 
             // MinutsTB
             // 
-            MinutsTB.Cursor = Cursors.SizeAll;
+            MinutsTB.Cursor = Cursors.IBeam;
             MinutsTB.Font = new Font("Segoe UI", 15F);
             MinutsTB.ForeColor = SystemColors.WindowText;
             MinutsTB.Location = new Point(55, 128);
@@ -468,6 +490,7 @@
             // 
             // SecondsTB
             // 
+            SecondsTB.Cursor = Cursors.IBeam;
             SecondsTB.Font = new Font("Segoe UI", 15F);
             SecondsTB.Location = new Point(107, 128);
             SecondsTB.MaxLength = 2;
@@ -508,6 +531,7 @@
             // 
             // HoursTB
             // 
+            HoursTB.Cursor = Cursors.IBeam;
             HoursTB.Font = new Font("Segoe UI", 15F);
             HoursTB.ForeColor = SystemColors.WindowText;
             HoursTB.Location = new Point(3, 128);
@@ -549,6 +573,7 @@
             // 
             // questionsS_TB
             // 
+            questionsS_TB.Cursor = Cursors.Help;
             questionsS_TB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             questionsS_TB.Location = new Point(366, 426);
             questionsS_TB.Name = "questionsS_TB";
@@ -634,26 +659,6 @@
             BackB1.Text = "Назад";
             BackB1.UseVisualStyleBackColor = true;
             BackB1.Click += BackB1_Click;
-            // 
-            // ErrorL2
-            // 
-            ErrorL2.BackColor = Color.White;
-            ErrorL2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            ErrorL2.ForeColor = Color.Red;
-            ErrorL2.Location = new Point(5, 322);
-            ErrorL2.Name = "ErrorL2";
-            ErrorL2.Size = new Size(385, 64);
-            ErrorL2.TabIndex = 25;
-            // 
-            // ResultSecondsL
-            // 
-            ResultSecondsL.BackColor = Color.White;
-            ResultSecondsL.Font = new Font("Segoe UI", 15F);
-            ResultSecondsL.Location = new Point(238, 129);
-            ResultSecondsL.Name = "ResultSecondsL";
-            ResultSecondsL.Size = new Size(154, 42);
-            ResultSecondsL.TabIndex = 26;
-            ResultSecondsL.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
