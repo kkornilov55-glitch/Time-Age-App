@@ -57,11 +57,25 @@
             CalcB1 = new Button();
             panel4 = new Panel();
             label6 = new Label();
-            TimeTB1 = new TextBox();
-            SecTB1 = new TextBox();
+            ResultTimeTB = new TextBox();
+            SecTB = new TextBox();
             panel2 = new Panel();
             label5 = new Label();
-            TimeToSecTP = new TabPage();
+            tabPage1 = new TabPage();
+            MinutsTB = new TextBox();
+            SecondsTB = new TextBox();
+            CalcB2 = new Button();
+            panel1 = new Panel();
+            label10 = new Label();
+            ResultSecondsTB = new TextBox();
+            HoursTB = new TextBox();
+            panel6 = new Panel();
+            label11 = new Label();
+            FromS_T_To_MenuB = new Button();
+            questionsS_TB = new Button();
+            panel8 = new Panel();
+            label9 = new Label();
+            ErrorTB2 = new TextBox();
             QuestionsS_TP = new Panel();
             panel7 = new Panel();
             label8 = new Label();
@@ -79,6 +93,10 @@
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
+            tabPage1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel6.SuspendLayout();
+            panel8.SuspendLayout();
             QuestionsS_TP.SuspendLayout();
             panel7.SuspendLayout();
             SuspendLayout();
@@ -88,7 +106,7 @@
             MenuP.BackColor = Color.LightGray;
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(0, 0);
+            MenuP.Location = new Point(746, 12);
             MenuP.Name = "MenuP";
             MenuP.Size = new Size(406, 497);
             MenuP.TabIndex = 0;
@@ -171,7 +189,7 @@
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(0, 0);
+            QuestionsP.Location = new Point(450, 515);
             QuestionsP.Name = "QuestionsP";
             QuestionsP.Size = new Size(406, 497);
             QuestionsP.TabIndex = 1;
@@ -261,16 +279,16 @@
             // 
             TimeAndSecsP.BackColor = Color.Silver;
             TimeAndSecsP.Controls.Add(TimeAndSecsTC);
-            TimeAndSecsP.Location = new Point(0, 0);
+            TimeAndSecsP.Location = new Point(3, 9);
             TimeAndSecsP.Name = "TimeAndSecsP";
-            TimeAndSecsP.Size = new Size(412, 502);
+            TimeAndSecsP.Size = new Size(400, 500);
             TimeAndSecsP.TabIndex = 2;
             // 
             // TimeAndSecsTC
             // 
             TimeAndSecsTC.Controls.Add(SecToTimeTP);
-            TimeAndSecsTC.Controls.Add(TimeToSecTP);
-            TimeAndSecsTC.Location = new Point(0, 2);
+            TimeAndSecsTC.Controls.Add(tabPage1);
+            TimeAndSecsTC.Location = new Point(0, 0);
             TimeAndSecsTC.Name = "TimeAndSecsTC";
             TimeAndSecsTC.SelectedIndex = 0;
             TimeAndSecsTC.Size = new Size(406, 497);
@@ -285,8 +303,8 @@
             SecToTimeTP.Controls.Add(ErrorTB1);
             SecToTimeTP.Controls.Add(CalcB1);
             SecToTimeTP.Controls.Add(panel4);
-            SecToTimeTP.Controls.Add(TimeTB1);
-            SecToTimeTP.Controls.Add(SecTB1);
+            SecToTimeTP.Controls.Add(ResultTimeTB);
+            SecToTimeTP.Controls.Add(SecTB);
             SecToTimeTP.Controls.Add(panel2);
             SecToTimeTP.Font = new Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             SecToTimeTP.Location = new Point(4, 29);
@@ -358,36 +376,36 @@
             // 
             panel4.BackColor = Color.Silver;
             panel4.Controls.Add(label6);
-            panel4.Location = new Point(167, 129);
+            panel4.Location = new Point(163, 129);
             panel4.Name = "panel4";
-            panel4.Size = new Size(65, 43);
+            panel4.Size = new Size(69, 43);
             panel4.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Leelawadee UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(12, 2);
+            label6.Location = new Point(16, 2);
             label6.Name = "label6";
             label6.Size = new Size(45, 38);
             label6.TabIndex = 0;
             label6.Text = "⮕";
             // 
-            // TimeTB1
+            // ResultTimeTB
             // 
-            TimeTB1.Location = new Point(238, 129);
-            TimeTB1.Multiline = true;
-            TimeTB1.Name = "TimeTB1";
-            TimeTB1.Size = new Size(154, 42);
-            TimeTB1.TabIndex = 7;
+            ResultTimeTB.Location = new Point(238, 129);
+            ResultTimeTB.Multiline = true;
+            ResultTimeTB.Name = "ResultTimeTB";
+            ResultTimeTB.Size = new Size(154, 42);
+            ResultTimeTB.TabIndex = 7;
             // 
-            // SecTB1
+            // SecTB
             // 
-            SecTB1.Location = new Point(7, 129);
-            SecTB1.Multiline = true;
-            SecTB1.Name = "SecTB1";
-            SecTB1.Size = new Size(154, 42);
-            SecTB1.TabIndex = 6;
+            SecTB.Location = new Point(3, 129);
+            SecTB.Multiline = true;
+            SecTB.Name = "SecTB";
+            SecTB.Size = new Size(154, 42);
+            SecTB.TabIndex = 6;
             // 
             // panel2
             // 
@@ -408,21 +426,166 @@
             label5.TabIndex = 5;
             label5.Text = "Секунды - время";
             // 
-            // TimeToSecTP
+            // tabPage1
             // 
-            TimeToSecTP.Location = new Point(4, 29);
-            TimeToSecTP.Name = "TimeToSecTP";
-            TimeToSecTP.Padding = new Padding(3);
-            TimeToSecTP.Size = new Size(398, 464);
-            TimeToSecTP.TabIndex = 1;
-            TimeToSecTP.Text = "Время ➝ Секунды";
-            TimeToSecTP.UseVisualStyleBackColor = true;
+            tabPage1.BackColor = Color.LightGray;
+            tabPage1.Controls.Add(MinutsTB);
+            tabPage1.Controls.Add(SecondsTB);
+            tabPage1.Controls.Add(CalcB2);
+            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(ResultSecondsTB);
+            tabPage1.Controls.Add(HoursTB);
+            tabPage1.Controls.Add(panel6);
+            tabPage1.Controls.Add(FromS_T_To_MenuB);
+            tabPage1.Controls.Add(questionsS_TB);
+            tabPage1.Controls.Add(panel8);
+            tabPage1.Controls.Add(ErrorTB2);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(398, 464);
+            tabPage1.TabIndex = 1;
+            tabPage1.Text = "Время ➝ секунды";
+            // 
+            // MinutsTB
+            // 
+            MinutsTB.Cursor = Cursors.SizeAll;
+            MinutsTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            MinutsTB.ForeColor = SystemColors.WindowText;
+            MinutsTB.Location = new Point(55, 128);
+            MinutsTB.Multiline = true;
+            MinutsTB.Name = "MinutsTB";
+            MinutsTB.Size = new Size(50, 42);
+            MinutsTB.TabIndex = 24;
+            // 
+            // SecondsTB
+            // 
+            SecondsTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SecondsTB.Location = new Point(107, 128);
+            SecondsTB.Multiline = true;
+            SecondsTB.Name = "SecondsTB";
+            SecondsTB.Size = new Size(50, 42);
+            SecondsTB.TabIndex = 23;
+            // 
+            // CalcB2
+            // 
+            CalcB2.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            CalcB2.Location = new Point(7, 198);
+            CalcB2.Name = "CalcB2";
+            CalcB2.Size = new Size(385, 51);
+            CalcB2.TabIndex = 18;
+            CalcB2.Text = "Рассчитать";
+            CalcB2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(label10);
+            panel1.Location = new Point(163, 128);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(69, 43);
+            panel1.TabIndex = 17;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Leelawadee UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(16, 2);
+            label10.Name = "label10";
+            label10.Size = new Size(45, 38);
+            label10.TabIndex = 0;
+            label10.Text = "⮕";
+            // 
+            // ResultSecondsTB
+            // 
+            ResultSecondsTB.Location = new Point(238, 128);
+            ResultSecondsTB.Multiline = true;
+            ResultSecondsTB.Name = "ResultSecondsTB";
+            ResultSecondsTB.Size = new Size(154, 42);
+            ResultSecondsTB.TabIndex = 16;
+            // 
+            // HoursTB
+            // 
+            HoursTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            HoursTB.ForeColor = SystemColors.WindowText;
+            HoursTB.Location = new Point(3, 128);
+            HoursTB.Multiline = true;
+            HoursTB.Name = "HoursTB";
+            HoursTB.Size = new Size(50, 42);
+            HoursTB.TabIndex = 15;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.DarkGray;
+            panel6.Controls.Add(label11);
+            panel6.Location = new Point(7, 5);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(385, 68);
+            panel6.TabIndex = 14;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label11.Location = new Point(54, 11);
+            label11.Name = "label11";
+            label11.Size = new Size(255, 41);
+            label11.TabIndex = 5;
+            label11.Text = "Время - секунды";
+            // 
+            // FromS_T_To_MenuB
+            // 
+            FromS_T_To_MenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            FromS_T_To_MenuB.Location = new Point(7, 426);
+            FromS_T_To_MenuB.Name = "FromS_T_To_MenuB";
+            FromS_T_To_MenuB.Size = new Size(81, 34);
+            FromS_T_To_MenuB.TabIndex = 22;
+            FromS_T_To_MenuB.Text = "Меню";
+            FromS_T_To_MenuB.UseVisualStyleBackColor = true;
+            FromS_T_To_MenuB.Click += FromS_T_To_MenuB_Click;
+            // 
+            // questionsS_TB
+            // 
+            questionsS_TB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            questionsS_TB.Location = new Point(366, 426);
+            questionsS_TB.Name = "questionsS_TB";
+            questionsS_TB.Size = new Size(29, 34);
+            questionsS_TB.TabIndex = 21;
+            questionsS_TB.Text = "?";
+            questionsS_TB.UseVisualStyleBackColor = true;
+            questionsS_TB.Click += questionsS_TB_Click;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Silver;
+            panel8.Controls.Add(label9);
+            panel8.Location = new Point(7, 284);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(81, 35);
+            panel8.TabIndex = 20;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(5, 8);
+            label9.Name = "label9";
+            label9.Size = new Size(68, 20);
+            label9.TabIndex = 0;
+            label9.Text = "Ошибка:";
+            // 
+            // ErrorTB2
+            // 
+            ErrorTB2.Location = new Point(7, 325);
+            ErrorTB2.Multiline = true;
+            ErrorTB2.Name = "ErrorTB2";
+            ErrorTB2.Size = new Size(385, 64);
+            ErrorTB2.TabIndex = 19;
             // 
             // QuestionsS_TP
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
             QuestionsS_TP.Controls.Add(panel7);
-            QuestionsS_TP.Location = new Point(0, 0);
+            QuestionsS_TP.Location = new Point(1158, 12);
             QuestionsS_TP.Name = "QuestionsS_TP";
             QuestionsS_TP.Size = new Size(406, 497);
             QuestionsS_TP.TabIndex = 3;
@@ -482,7 +645,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(414, 504);
+            ClientSize = new Size(1286, 889);
             Controls.Add(QuestionsS_TP);
             Controls.Add(MenuP);
             Controls.Add(TimeAndSecsP);
@@ -506,6 +669,14 @@
             panel4.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             QuestionsS_TP.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
@@ -534,13 +705,12 @@
         private Panel TimeAndSecsP;
         private TabControl TimeAndSecsTC;
         private TabPage SecToTimeTP;
-        private TabPage TimeToSecTP;
         private Panel panel2;
         private Label label5;
         private Panel panel4;
         private Label label6;
-        private TextBox TimeTB1;
-        private TextBox SecTB1;
+        private TextBox ResultTimeTB;
+        private TextBox SecTB;
         private TextBox ErrorTB1;
         private Button CalcB1;
         private Panel panel5;
@@ -553,5 +723,20 @@
         private Button BackB1;
         private Label label8;
         private Button FromT_S_To_MenuB;
+        private TabPage tabPage1;
+        private Button CalcB2;
+        private Panel panel1;
+        private Label label10;
+        private TextBox ResultSecondsTB;
+        private TextBox HoursTB;
+        private Panel panel6;
+        private Label label11;
+        private Button FromS_T_To_MenuB;
+        private Button questionsS_TB;
+        private Panel panel8;
+        private Label label9;
+        private TextBox ErrorTB2;
+        private TextBox MinutsTB;
+        private TextBox SecondsTB;
     }
 }

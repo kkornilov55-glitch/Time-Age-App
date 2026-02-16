@@ -34,36 +34,53 @@ namespace WinForms2
             panel.BringToFront();
         }
 
+        //МЕНЮ
         private void GoToMenuB_Click(object sender, EventArgs e)
         {
-            OpenNeedPanel(MenuP);
+            OpenNeedPanel(MenuP); //Возврат к меню из окна справки
         }
 
         private void QuestionsB_Click(object sender, EventArgs e)
         {
-            OpenNeedPanel(QuestionsP);
+            OpenNeedPanel(QuestionsP); //Переход к окну справки (Меню)
         }
 
         private void TimeConvB_Click(object sender, EventArgs e)
         {
-            OpenNeedPanel(TimeAndSecsP);
+            OpenNeedPanel(TimeAndSecsP); //Переход к окну 1 задания
         }
 
 
+        //1 задание
 
+        //1 вкладка
         private void questionsT_SB_Click(object sender, EventArgs e)
         {
-            OpenNeedPanel(QuestionsS_TP);
-        }
-
-        private void BackB1_Click(object sender, EventArgs e)
-        {
-            OpenNeedPanel(TimeAndSecsP);
+            OpenNeedPanel(QuestionsS_TP); //Окно справки (1 задание)
         }
 
         private void FromT_S_To_MenuB_Click(object sender, EventArgs e)
         {
-            OpenNeedPanel(MenuP);
+            OpenNeedPanel(MenuP); //Возврат к меню
         }
+
+        //2 вкладка
+        private void FromS_T_To_MenuB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(MenuP); //Возврат к меню
+        }
+
+        private void questionsS_TB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(QuestionsS_TP); //Окно справки (1 задание)
+        }
+
+        //Общее
+        private void BackB1_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(TimeAndSecsP); //Возврат к основному окну
+        }
+
+
     }
 }
