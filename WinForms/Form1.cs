@@ -1,3 +1,5 @@
+using APP;
+
 namespace WinForms2
 {
     public partial class MainForm : Form
@@ -64,6 +66,27 @@ namespace WinForms2
             OpenNeedPanel(MenuP); //Возврат к меню
         }
 
+        private void CalcB1_Click(object sender, EventArgs e) //Расчёты
+        {
+            //Уборка
+            ErrorL1.Text = null;
+            ResultTimeL.Text = null;
+
+            Time time = new Time();
+
+            //Получаем число секунд
+            string inputSeconds = SecTB.Text;
+
+            //Считаем время
+            string result = time.SecToTime(inputSeconds);
+
+            //Возвращяем время или ошибку
+            if (time.flagError)
+                ErrorL1.Text = result;
+            else
+                ResultTimeL.Text = result;
+        }
+
         //2 вкладка
         private void FromS_T_To_MenuB_Click(object sender, EventArgs e)
         {
@@ -75,12 +98,34 @@ namespace WinForms2
             OpenNeedPanel(QuestionsS_TP); //Окно справки (1 задание)
         }
 
+        private void CalcB2_Click(object sender, EventArgs e) //Расчёты
+        {
+            //Уборка
+            ErrorL2.Text = null;
+            ResultSecondsL.Text = null;
+
+            Time time = new Time();
+
+            //Получаем значения для времени
+            string inputHours = HoursTB.Text;
+            string inputMins = MinutsTB.Text;
+            string inputSeconds = SecondsTB.Text;
+
+
+            //Считаем секунды
+            string result = time.TimeToSec(inputHours, inputMins, inputSeconds);
+
+            //Возвращяем время или ошибку
+            if (time.flagError)
+                ErrorL2.Text = result;  
+            else
+                ResultSecondsL.Text = result;
+        }
+
         //Общее
         private void BackB1_Click(object sender, EventArgs e)
         {
             OpenNeedPanel(TimeAndSecsP); //Возврат к основному окну
         }
-
-
     }
 }

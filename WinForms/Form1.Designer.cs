@@ -49,15 +49,15 @@
             TimeAndSecsP = new Panel();
             TimeAndSecsTC = new TabControl();
             SecToTimeTP = new TabPage();
+            ResultTimeL = new Label();
+            ErrorL1 = new Label();
             FromT_S_To_MenuB = new Button();
             questionsT_SB = new Button();
             panel5 = new Panel();
             label7 = new Label();
-            ErrorTB1 = new TextBox();
             CalcB1 = new Button();
             panel4 = new Panel();
             label6 = new Label();
-            ResultTimeTB = new TextBox();
             SecTB = new TextBox();
             panel2 = new Panel();
             label5 = new Label();
@@ -67,7 +67,6 @@
             CalcB2 = new Button();
             panel1 = new Panel();
             label10 = new Label();
-            ResultSecondsTB = new TextBox();
             HoursTB = new TextBox();
             panel6 = new Panel();
             label11 = new Label();
@@ -75,13 +74,14 @@
             questionsS_TB = new Button();
             panel8 = new Panel();
             label9 = new Label();
-            ErrorTB2 = new TextBox();
             QuestionsS_TP = new Panel();
             panel7 = new Panel();
             label8 = new Label();
             label12 = new Label();
             label13 = new Label();
             BackB1 = new Button();
+            ErrorL2 = new Label();
+            ResultSecondsL = new Label();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
@@ -297,13 +297,13 @@
             // SecToTimeTP
             // 
             SecToTimeTP.BackColor = Color.LightGray;
+            SecToTimeTP.Controls.Add(ResultTimeL);
+            SecToTimeTP.Controls.Add(ErrorL1);
             SecToTimeTP.Controls.Add(FromT_S_To_MenuB);
             SecToTimeTP.Controls.Add(questionsT_SB);
             SecToTimeTP.Controls.Add(panel5);
-            SecToTimeTP.Controls.Add(ErrorTB1);
             SecToTimeTP.Controls.Add(CalcB1);
             SecToTimeTP.Controls.Add(panel4);
-            SecToTimeTP.Controls.Add(ResultTimeTB);
             SecToTimeTP.Controls.Add(SecTB);
             SecToTimeTP.Controls.Add(panel2);
             SecToTimeTP.Font = new Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
@@ -313,6 +313,26 @@
             SecToTimeTP.Size = new Size(398, 464);
             SecToTimeTP.TabIndex = 0;
             SecToTimeTP.Text = "Секунды ➝ Время";
+            // 
+            // ResultTimeL
+            // 
+            ResultTimeL.BackColor = Color.White;
+            ResultTimeL.Font = new Font("Segoe UI", 15F);
+            ResultTimeL.Location = new Point(237, 129);
+            ResultTimeL.Name = "ResultTimeL";
+            ResultTimeL.Size = new Size(154, 42);
+            ResultTimeL.TabIndex = 15;
+            ResultTimeL.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ErrorL1
+            // 
+            ErrorL1.BackColor = Color.White;
+            ErrorL1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            ErrorL1.ForeColor = Color.Red;
+            ErrorL1.Location = new Point(6, 323);
+            ErrorL1.Name = "ErrorL1";
+            ErrorL1.Size = new Size(385, 64);
+            ErrorL1.TabIndex = 14;
             // 
             // FromT_S_To_MenuB
             // 
@@ -354,14 +374,6 @@
             label7.TabIndex = 0;
             label7.Text = "Ошибка:";
             // 
-            // ErrorTB1
-            // 
-            ErrorTB1.Location = new Point(7, 326);
-            ErrorTB1.Multiline = true;
-            ErrorTB1.Name = "ErrorTB1";
-            ErrorTB1.Size = new Size(385, 64);
-            ErrorTB1.TabIndex = 10;
-            // 
             // CalcB1
             // 
             CalcB1.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
@@ -371,6 +383,7 @@
             CalcB1.TabIndex = 9;
             CalcB1.Text = "Рассчитать";
             CalcB1.UseVisualStyleBackColor = true;
+            CalcB1.Click += CalcB1_Click;
             // 
             // panel4
             // 
@@ -391,17 +404,11 @@
             label6.TabIndex = 0;
             label6.Text = "⮕";
             // 
-            // ResultTimeTB
-            // 
-            ResultTimeTB.Location = new Point(238, 129);
-            ResultTimeTB.Multiline = true;
-            ResultTimeTB.Name = "ResultTimeTB";
-            ResultTimeTB.Size = new Size(154, 42);
-            ResultTimeTB.TabIndex = 7;
-            // 
             // SecTB
             // 
+            SecTB.Font = new Font("Segoe UI", 15F);
             SecTB.Location = new Point(3, 129);
+            SecTB.MaxLength = 10;
             SecTB.Multiline = true;
             SecTB.Name = "SecTB";
             SecTB.Size = new Size(154, 42);
@@ -429,17 +436,17 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.LightGray;
+            tabPage1.Controls.Add(ResultSecondsL);
+            tabPage1.Controls.Add(ErrorL2);
             tabPage1.Controls.Add(MinutsTB);
             tabPage1.Controls.Add(SecondsTB);
             tabPage1.Controls.Add(CalcB2);
             tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(ResultSecondsTB);
             tabPage1.Controls.Add(HoursTB);
             tabPage1.Controls.Add(panel6);
             tabPage1.Controls.Add(FromS_T_To_MenuB);
             tabPage1.Controls.Add(questionsS_TB);
             tabPage1.Controls.Add(panel8);
-            tabPage1.Controls.Add(ErrorTB2);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -450,9 +457,10 @@
             // MinutsTB
             // 
             MinutsTB.Cursor = Cursors.SizeAll;
-            MinutsTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            MinutsTB.Font = new Font("Segoe UI", 15F);
             MinutsTB.ForeColor = SystemColors.WindowText;
             MinutsTB.Location = new Point(55, 128);
+            MinutsTB.MaxLength = 2;
             MinutsTB.Multiline = true;
             MinutsTB.Name = "MinutsTB";
             MinutsTB.Size = new Size(50, 42);
@@ -460,8 +468,9 @@
             // 
             // SecondsTB
             // 
-            SecondsTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SecondsTB.Font = new Font("Segoe UI", 15F);
             SecondsTB.Location = new Point(107, 128);
+            SecondsTB.MaxLength = 2;
             SecondsTB.Multiline = true;
             SecondsTB.Name = "SecondsTB";
             SecondsTB.Size = new Size(50, 42);
@@ -476,6 +485,7 @@
             CalcB2.TabIndex = 18;
             CalcB2.Text = "Рассчитать";
             CalcB2.UseVisualStyleBackColor = true;
+            CalcB2.Click += CalcB2_Click;
             // 
             // panel1
             // 
@@ -496,19 +506,12 @@
             label10.TabIndex = 0;
             label10.Text = "⮕";
             // 
-            // ResultSecondsTB
-            // 
-            ResultSecondsTB.Location = new Point(238, 128);
-            ResultSecondsTB.Multiline = true;
-            ResultSecondsTB.Name = "ResultSecondsTB";
-            ResultSecondsTB.Size = new Size(154, 42);
-            ResultSecondsTB.TabIndex = 16;
-            // 
             // HoursTB
             // 
-            HoursTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            HoursTB.Font = new Font("Segoe UI", 15F);
             HoursTB.ForeColor = SystemColors.WindowText;
             HoursTB.Location = new Point(3, 128);
+            HoursTB.MaxLength = 2;
             HoursTB.Multiline = true;
             HoursTB.Name = "HoursTB";
             HoursTB.Size = new Size(50, 42);
@@ -573,14 +576,6 @@
             label9.TabIndex = 0;
             label9.Text = "Ошибка:";
             // 
-            // ErrorTB2
-            // 
-            ErrorTB2.Location = new Point(7, 325);
-            ErrorTB2.Multiline = true;
-            ErrorTB2.Name = "ErrorTB2";
-            ErrorTB2.Size = new Size(385, 64);
-            ErrorTB2.TabIndex = 19;
-            // 
             // QuestionsS_TP
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
@@ -639,6 +634,26 @@
             BackB1.Text = "Назад";
             BackB1.UseVisualStyleBackColor = true;
             BackB1.Click += BackB1_Click;
+            // 
+            // ErrorL2
+            // 
+            ErrorL2.BackColor = Color.White;
+            ErrorL2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            ErrorL2.ForeColor = Color.Red;
+            ErrorL2.Location = new Point(5, 322);
+            ErrorL2.Name = "ErrorL2";
+            ErrorL2.Size = new Size(385, 64);
+            ErrorL2.TabIndex = 25;
+            // 
+            // ResultSecondsL
+            // 
+            ResultSecondsL.BackColor = Color.White;
+            ResultSecondsL.Font = new Font("Segoe UI", 15F);
+            ResultSecondsL.Location = new Point(238, 129);
+            ResultSecondsL.Name = "ResultSecondsL";
+            ResultSecondsL.Size = new Size(154, 42);
+            ResultSecondsL.TabIndex = 26;
+            ResultSecondsL.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -709,9 +724,7 @@
         private Label label5;
         private Panel panel4;
         private Label label6;
-        private TextBox ResultTimeTB;
         private TextBox SecTB;
-        private TextBox ErrorTB1;
         private Button CalcB1;
         private Panel panel5;
         private Label label7;
@@ -727,7 +740,6 @@
         private Button CalcB2;
         private Panel panel1;
         private Label label10;
-        private TextBox ResultSecondsTB;
         private TextBox HoursTB;
         private Panel panel6;
         private Label label11;
@@ -735,8 +747,11 @@
         private Button questionsS_TB;
         private Panel panel8;
         private Label label9;
-        private TextBox ErrorTB2;
         private TextBox MinutsTB;
         private TextBox SecondsTB;
+        private Label ErrorL1;
+        private Label ResultTimeL;
+        private Label ErrorL2;
+        private Label ResultSecondsL;
     }
 }
