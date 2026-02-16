@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label12.Text" xml:space="preserve">
+    <value>- Для перевода секунд, впишите
+  их значение в окошко слева от
+  стрелочки, далее нажмите 
+  "Рассчитать"
+   В случае корректного ввода, вы
+   увидите ответ справа от стрелочки,
+   иначе в поле ошибка вы увидите
+   почему результат не был получен</value>
+  </data>
 </root>
