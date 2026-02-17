@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             MenuP = new Panel();
             MenuButtonsP = new Panel();
-            QuestionsB = new Button();
             WatchPaintB = new Button();
             AgeCalcB = new Button();
             TimeConvB = new Button();
@@ -46,7 +45,6 @@
             TimeAndSecsTextL = new Label();
             TimaAndSecsHeadL = new Label();
             GoToMenuB = new Button();
-            TimeAndSecsP = new Panel();
             TimeAndSecsTC = new TabControl();
             SecToTimeTP = new TabPage();
             ResultTimeL = new Label();
@@ -82,12 +80,16 @@
             label12 = new Label();
             label13 = new Label();
             BackB1 = new Button();
+            TimeAndSecsP = new Panel();
+            RealAgeP = new Panel();
+            panel9 = new Panel();
+            label14 = new Label();
+            QuestionsB = new Button();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
             QuestionsP.SuspendLayout();
             panel3.SuspendLayout();
-            TimeAndSecsP.SuspendLayout();
             TimeAndSecsTC.SuspendLayout();
             SecToTimeTP.SuspendLayout();
             panel5.SuspendLayout();
@@ -99,48 +101,39 @@
             panel8.SuspendLayout();
             QuestionsS_TP.SuspendLayout();
             panel7.SuspendLayout();
+            TimeAndSecsP.SuspendLayout();
+            RealAgeP.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // MenuP
             // 
             MenuP.BackColor = Color.LightGray;
+            MenuP.Controls.Add(QuestionsB);
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(746, 12);
+            MenuP.Location = new Point(571, 205);
             MenuP.Name = "MenuP";
-            MenuP.Size = new Size(406, 497);
+            MenuP.Size = new Size(400, 500);
             MenuP.TabIndex = 0;
             // 
             // MenuButtonsP
             // 
             MenuButtonsP.BackColor = Color.Silver;
-            MenuButtonsP.Controls.Add(QuestionsB);
             MenuButtonsP.Controls.Add(WatchPaintB);
             MenuButtonsP.Controls.Add(AgeCalcB);
             MenuButtonsP.Controls.Add(TimeConvB);
-            MenuButtonsP.Location = new Point(12, 140);
+            MenuButtonsP.Location = new Point(0, 140);
             MenuButtonsP.Name = "MenuButtonsP";
-            MenuButtonsP.Size = new Size(364, 298);
+            MenuButtonsP.Size = new Size(400, 238);
             MenuButtonsP.TabIndex = 1;
-            // 
-            // QuestionsB
-            // 
-            QuestionsB.Dock = DockStyle.Bottom;
-            QuestionsB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            QuestionsB.Location = new Point(0, 259);
-            QuestionsB.Name = "QuestionsB";
-            QuestionsB.Size = new Size(364, 39);
-            QuestionsB.TabIndex = 4;
-            QuestionsB.Text = "Справка";
-            QuestionsB.UseVisualStyleBackColor = true;
-            QuestionsB.Click += QuestionsB_Click;
             // 
             // WatchPaintB
             // 
             WatchPaintB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            WatchPaintB.Location = new Point(23, 165);
+            WatchPaintB.Location = new Point(52, 162);
             WatchPaintB.Name = "WatchPaintB";
-            WatchPaintB.Size = new Size(322, 47);
+            WatchPaintB.Size = new Size(300, 47);
             WatchPaintB.TabIndex = 2;
             WatchPaintB.Text = "Время на часах";
             WatchPaintB.UseVisualStyleBackColor = true;
@@ -148,9 +141,9 @@
             // AgeCalcB
             // 
             AgeCalcB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            AgeCalcB.Location = new Point(23, 94);
+            AgeCalcB.Location = new Point(52, 92);
             AgeCalcB.Name = "AgeCalcB";
-            AgeCalcB.Size = new Size(322, 47);
+            AgeCalcB.Size = new Size(300, 47);
             AgeCalcB.TabIndex = 1;
             AgeCalcB.Text = "Точный возраст";
             AgeCalcB.UseVisualStyleBackColor = true;
@@ -158,9 +151,9 @@
             // TimeConvB
             // 
             TimeConvB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            TimeConvB.Location = new Point(23, 24);
+            TimeConvB.Location = new Point(52, 22);
             TimeConvB.Name = "TimeConvB";
-            TimeConvB.Size = new Size(322, 47);
+            TimeConvB.Size = new Size(300, 47);
             TimeConvB.TabIndex = 0;
             TimeConvB.Text = "Время ⟷ Секунды";
             TimeConvB.UseVisualStyleBackColor = true;
@@ -170,26 +163,28 @@
             // 
             MenuHeadP.BackColor = Color.DarkGray;
             MenuHeadP.Controls.Add(MenuHeadL);
-            MenuHeadP.Location = new Point(12, 12);
+            MenuHeadP.Dock = DockStyle.Top;
+            MenuHeadP.Location = new Point(0, 0);
             MenuHeadP.Name = "MenuHeadP";
-            MenuHeadP.Size = new Size(364, 68);
+            MenuHeadP.Size = new Size(400, 68);
             MenuHeadP.TabIndex = 0;
             // 
             // MenuHeadL
             // 
-            MenuHeadL.AutoSize = true;
+            MenuHeadL.Dock = DockStyle.Top;
             MenuHeadL.Font = new Font("Segoe UI Semibold", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            MenuHeadL.Location = new Point(108, 4);
+            MenuHeadL.Location = new Point(0, 0);
             MenuHeadL.Name = "MenuHeadL";
-            MenuHeadL.Size = new Size(152, 60);
+            MenuHeadL.Size = new Size(400, 68);
             MenuHeadL.TabIndex = 5;
             MenuHeadL.Text = "Меню";
+            MenuHeadL.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // QuestionsP
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(450, 515);
+            QuestionsP.Location = new Point(772, 824);
             QuestionsP.Name = "QuestionsP";
             QuestionsP.Size = new Size(406, 497);
             QuestionsP.TabIndex = 1;
@@ -275,23 +270,14 @@
             GoToMenuB.UseVisualStyleBackColor = true;
             GoToMenuB.Click += GoToMenuB_Click;
             // 
-            // TimeAndSecsP
-            // 
-            TimeAndSecsP.BackColor = Color.Silver;
-            TimeAndSecsP.Controls.Add(TimeAndSecsTC);
-            TimeAndSecsP.Location = new Point(3, 9);
-            TimeAndSecsP.Name = "TimeAndSecsP";
-            TimeAndSecsP.Size = new Size(400, 500);
-            TimeAndSecsP.TabIndex = 2;
-            // 
             // TimeAndSecsTC
             // 
             TimeAndSecsTC.Controls.Add(SecToTimeTP);
             TimeAndSecsTC.Controls.Add(tabPage1);
-            TimeAndSecsTC.Location = new Point(0, 0);
+            TimeAndSecsTC.Location = new Point(0, 3);
             TimeAndSecsTC.Name = "TimeAndSecsTC";
             TimeAndSecsTC.SelectedIndex = 0;
-            TimeAndSecsTC.Size = new Size(406, 497);
+            TimeAndSecsTC.Size = new Size(400, 499);
             TimeAndSecsTC.TabIndex = 5;
             // 
             // SecToTimeTP
@@ -310,7 +296,7 @@
             SecToTimeTP.Location = new Point(4, 29);
             SecToTimeTP.Name = "SecToTimeTP";
             SecToTimeTP.Padding = new Padding(3);
-            SecToTimeTP.Size = new Size(398, 464);
+            SecToTimeTP.Size = new Size(392, 466);
             SecToTimeTP.TabIndex = 0;
             SecToTimeTP.Text = "Секунды ➝ Время";
             // 
@@ -605,7 +591,7 @@
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
             QuestionsS_TP.Controls.Add(panel7);
-            QuestionsS_TP.Location = new Point(1158, 12);
+            QuestionsS_TP.Location = new Point(1566, 38);
             QuestionsS_TP.Name = "QuestionsS_TP";
             QuestionsS_TP.Size = new Size(406, 497);
             QuestionsS_TP.TabIndex = 3;
@@ -660,26 +646,75 @@
             BackB1.UseVisualStyleBackColor = true;
             BackB1.Click += BackB1_Click;
             // 
+            // TimeAndSecsP
+            // 
+            TimeAndSecsP.BackColor = Color.Silver;
+            TimeAndSecsP.Controls.Add(TimeAndSecsTC);
+            TimeAndSecsP.Location = new Point(1004, 12);
+            TimeAndSecsP.Name = "TimeAndSecsP";
+            TimeAndSecsP.Size = new Size(400, 500);
+            TimeAndSecsP.TabIndex = 6;
+            // 
+            // RealAgeP
+            // 
+            RealAgeP.BackColor = Color.LightGray;
+            RealAgeP.Controls.Add(panel9);
+            RealAgeP.Location = new Point(63, 44);
+            RealAgeP.Name = "RealAgeP";
+            RealAgeP.Size = new Size(400, 500);
+            RealAgeP.TabIndex = 7;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.DarkGray;
+            panel9.Controls.Add(label14);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(400, 68);
+            panel9.TabIndex = 6;
+            // 
+            // label14
+            // 
+            label14.Dock = DockStyle.Top;
+            label14.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label14.Location = new Point(0, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(400, 68);
+            label14.TabIndex = 5;
+            label14.Text = "Точный возраст";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // QuestionsB
+            // 
+            QuestionsB.Dock = DockStyle.Bottom;
+            QuestionsB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            QuestionsB.Location = new Point(0, 461);
+            QuestionsB.Name = "QuestionsB";
+            QuestionsB.Size = new Size(400, 39);
+            QuestionsB.TabIndex = 5;
+            QuestionsB.Text = "Справка";
+            QuestionsB.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1286, 889);
+            ClientSize = new Size(1625, 889);
+            Controls.Add(RealAgeP);
+            Controls.Add(TimeAndSecsP);
             Controls.Add(QuestionsS_TP);
             Controls.Add(MenuP);
-            Controls.Add(TimeAndSecsP);
             Controls.Add(QuestionsP);
             Name = "MainForm";
             Text = "Лабораторная работа №2";
             MenuP.ResumeLayout(false);
             MenuButtonsP.ResumeLayout(false);
             MenuHeadP.ResumeLayout(false);
-            MenuHeadP.PerformLayout();
             QuestionsP.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            TimeAndSecsP.ResumeLayout(false);
             TimeAndSecsTC.ResumeLayout(false);
             SecToTimeTP.ResumeLayout(false);
             SecToTimeTP.PerformLayout();
@@ -700,6 +735,9 @@
             QuestionsS_TP.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            TimeAndSecsP.ResumeLayout(false);
+            RealAgeP.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -711,7 +749,6 @@
         private Button TimeConvB;
         private Button WatchPaintB;
         private Button AgeCalcB;
-        private Button QuestionsB;
         private Label MenuHeadL;
         private Panel QuestionsP;
         private Panel panel3;
@@ -722,7 +759,6 @@
         private Label label4;
         private Label label1;
         private Label label2;
-        private Panel TimeAndSecsP;
         private TabControl TimeAndSecsTC;
         private TabPage SecToTimeTP;
         private Panel panel2;
@@ -758,5 +794,10 @@
         private Label ResultTimeL;
         private Label ErrorL2;
         private Label ResultSecondsL;
+        private Panel TimeAndSecsP;
+        private Panel RealAgeP;
+        private Button QuestionsB;
+        private Panel panel9;
+        private Label label14;
     }
 }
