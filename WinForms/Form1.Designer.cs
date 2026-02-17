@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             MenuP = new Panel();
+            QuestionsB = new Button();
             MenuButtonsP = new Panel();
             WatchPaintB = new Button();
             AgeCalcB = new Button();
@@ -82,9 +83,28 @@
             BackB1 = new Button();
             TimeAndSecsP = new Panel();
             RealAgeP = new Panel();
+            FromRealAgeToMenuB = new Button();
+            QuesRealAgeB = new Button();
+            panel10 = new Panel();
+            ResultOrErrorAgeL = new Label();
+            label18 = new Label();
+            CalcAgeB = new Button();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            YearTB = new TextBox();
+            MonthTB = new TextBox();
+            DayTB = new TextBox();
+            MonthL = new Label();
+            YearL = new Label();
+            DayL = new Label();
             panel9 = new Panel();
             label14 = new Label();
-            QuestionsB = new Button();
+            QuesRealAgeP = new Panel();
+            panel12 = new Panel();
+            label20 = new Label();
+            label21 = new Label();
+            BackToRealAgeB = new Button();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
@@ -103,7 +123,10 @@
             panel7.SuspendLayout();
             TimeAndSecsP.SuspendLayout();
             RealAgeP.SuspendLayout();
+            panel10.SuspendLayout();
             panel9.SuspendLayout();
+            QuesRealAgeP.SuspendLayout();
+            panel12.SuspendLayout();
             SuspendLayout();
             // 
             // MenuP
@@ -112,10 +135,21 @@
             MenuP.Controls.Add(QuestionsB);
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(571, 205);
+            MenuP.Location = new Point(317, 807);
             MenuP.Name = "MenuP";
             MenuP.Size = new Size(400, 500);
             MenuP.TabIndex = 0;
+            // 
+            // QuestionsB
+            // 
+            QuestionsB.Dock = DockStyle.Bottom;
+            QuestionsB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            QuestionsB.Location = new Point(0, 461);
+            QuestionsB.Name = "QuestionsB";
+            QuestionsB.Size = new Size(400, 39);
+            QuestionsB.TabIndex = 5;
+            QuestionsB.Text = "Справка";
+            QuestionsB.UseVisualStyleBackColor = true;
             // 
             // MenuButtonsP
             // 
@@ -147,6 +181,7 @@
             AgeCalcB.TabIndex = 1;
             AgeCalcB.Text = "Точный возраст";
             AgeCalcB.UseVisualStyleBackColor = true;
+            AgeCalcB.Click += AgeCalcB_Click;
             // 
             // TimeConvB
             // 
@@ -184,7 +219,7 @@
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(772, 824);
+            QuestionsP.Location = new Point(1020, 549);
             QuestionsP.Name = "QuestionsP";
             QuestionsP.Size = new Size(406, 497);
             QuestionsP.TabIndex = 1;
@@ -438,7 +473,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(398, 464);
+            tabPage1.Size = new Size(392, 466);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Время ➝ секунды";
             // 
@@ -658,11 +693,174 @@
             // RealAgeP
             // 
             RealAgeP.BackColor = Color.LightGray;
+            RealAgeP.Controls.Add(FromRealAgeToMenuB);
+            RealAgeP.Controls.Add(QuesRealAgeB);
+            RealAgeP.Controls.Add(panel10);
             RealAgeP.Controls.Add(panel9);
             RealAgeP.Location = new Point(63, 44);
             RealAgeP.Name = "RealAgeP";
             RealAgeP.Size = new Size(400, 500);
             RealAgeP.TabIndex = 7;
+            // 
+            // FromRealAgeToMenuB
+            // 
+            FromRealAgeToMenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            FromRealAgeToMenuB.Location = new Point(3, 463);
+            FromRealAgeToMenuB.Name = "FromRealAgeToMenuB";
+            FromRealAgeToMenuB.Size = new Size(81, 34);
+            FromRealAgeToMenuB.TabIndex = 15;
+            FromRealAgeToMenuB.Text = "Меню";
+            FromRealAgeToMenuB.UseVisualStyleBackColor = true;
+            FromRealAgeToMenuB.Click += FromRealAgeToMenuB_Click;
+            // 
+            // QuesRealAgeB
+            // 
+            QuesRealAgeB.Cursor = Cursors.Help;
+            QuesRealAgeB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            QuesRealAgeB.Location = new Point(362, 462);
+            QuesRealAgeB.Name = "QuesRealAgeB";
+            QuesRealAgeB.Size = new Size(35, 35);
+            QuesRealAgeB.TabIndex = 14;
+            QuesRealAgeB.Text = "?";
+            QuesRealAgeB.UseVisualStyleBackColor = true;
+            QuesRealAgeB.Click += QuesRealAgeB_Click;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.Silver;
+            panel10.Controls.Add(ResultOrErrorAgeL);
+            panel10.Controls.Add(label18);
+            panel10.Controls.Add(CalcAgeB);
+            panel10.Controls.Add(label17);
+            panel10.Controls.Add(label16);
+            panel10.Controls.Add(label15);
+            panel10.Controls.Add(YearTB);
+            panel10.Controls.Add(MonthTB);
+            panel10.Controls.Add(DayTB);
+            panel10.Controls.Add(MonthL);
+            panel10.Controls.Add(YearL);
+            panel10.Controls.Add(DayL);
+            panel10.Location = new Point(0, 140);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(400, 255);
+            panel10.TabIndex = 7;
+            // 
+            // ResultOrErrorAgeL
+            // 
+            ResultOrErrorAgeL.BackColor = Color.White;
+            ResultOrErrorAgeL.Font = new Font("Segoe UI", 7F);
+            ResultOrErrorAgeL.Location = new Point(195, 186);
+            ResultOrErrorAgeL.Name = "ResultOrErrorAgeL";
+            ResultOrErrorAgeL.Size = new Size(190, 44);
+            ResultOrErrorAgeL.TabIndex = 12;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Leelawadee UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(144, 192);
+            label18.Name = "label18";
+            label18.Size = new Size(45, 38);
+            label18.TabIndex = 11;
+            label18.Text = "⮕";
+            // 
+            // CalcAgeB
+            // 
+            CalcAgeB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            CalcAgeB.Location = new Point(14, 186);
+            CalcAgeB.Name = "CalcAgeB";
+            CalcAgeB.Size = new Size(124, 45);
+            CalcAgeB.TabIndex = 10;
+            CalcAgeB.Text = "Вычислить";
+            CalcAgeB.UseVisualStyleBackColor = true;
+            CalcAgeB.Click += CalcAgeB_Click;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label17.Location = new Point(111, 119);
+            label17.Name = "label17";
+            label17.Size = new Size(20, 31);
+            label17.TabIndex = 8;
+            label17.Text = ":";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label16.Location = new Point(111, 70);
+            label16.Name = "label16";
+            label16.Size = new Size(20, 31);
+            label16.TabIndex = 7;
+            label16.Text = ":";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label15.Location = new Point(111, 21);
+            label15.Name = "label15";
+            label15.Size = new Size(20, 31);
+            label15.TabIndex = 6;
+            label15.Text = ":";
+            // 
+            // YearTB
+            // 
+            YearTB.Location = new Point(137, 119);
+            YearTB.Multiline = true;
+            YearTB.Name = "YearTB";
+            YearTB.Size = new Size(248, 37);
+            YearTB.TabIndex = 5;
+            // 
+            // MonthTB
+            // 
+            MonthTB.Location = new Point(137, 70);
+            MonthTB.Multiline = true;
+            MonthTB.Name = "MonthTB";
+            MonthTB.Size = new Size(248, 37);
+            MonthTB.TabIndex = 4;
+            // 
+            // DayTB
+            // 
+            DayTB.Location = new Point(137, 21);
+            DayTB.Multiline = true;
+            DayTB.Name = "DayTB";
+            DayTB.Size = new Size(248, 37);
+            DayTB.TabIndex = 3;
+            // 
+            // MonthL
+            // 
+            MonthL.BackColor = Color.White;
+            MonthL.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            MonthL.Location = new Point(14, 70);
+            MonthL.Name = "MonthL";
+            MonthL.Size = new Size(92, 37);
+            MonthL.TabIndex = 2;
+            MonthL.Text = "Месяц";
+            MonthL.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // YearL
+            // 
+            YearL.BackColor = Color.White;
+            YearL.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            YearL.Location = new Point(14, 119);
+            YearL.Name = "YearL";
+            YearL.Size = new Size(92, 37);
+            YearL.TabIndex = 1;
+            YearL.Text = "Год";
+            YearL.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DayL
+            // 
+            DayL.BackColor = Color.White;
+            DayL.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            DayL.Location = new Point(14, 21);
+            DayL.Name = "DayL";
+            DayL.Size = new Size(92, 37);
+            DayL.TabIndex = 0;
+            DayL.Text = "День";
+            DayL.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel9
             // 
@@ -685,16 +883,55 @@
             label14.Text = "Точный возраст";
             label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // QuestionsB
+            // QuesRealAgeP
             // 
-            QuestionsB.Dock = DockStyle.Bottom;
-            QuestionsB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            QuestionsB.Location = new Point(0, 461);
-            QuestionsB.Name = "QuestionsB";
-            QuestionsB.Size = new Size(400, 39);
-            QuestionsB.TabIndex = 5;
-            QuestionsB.Text = "Справка";
-            QuestionsB.UseVisualStyleBackColor = true;
+            QuesRealAgeP.BackColor = Color.LightGray;
+            QuesRealAgeP.Controls.Add(panel12);
+            QuesRealAgeP.Location = new Point(517, 47);
+            QuesRealAgeP.Name = "QuesRealAgeP";
+            QuesRealAgeP.Size = new Size(400, 500);
+            QuesRealAgeP.TabIndex = 8;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.Silver;
+            panel12.Controls.Add(label20);
+            panel12.Controls.Add(label21);
+            panel12.Controls.Add(BackToRealAgeB);
+            panel12.Location = new Point(14, 12);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(373, 476);
+            panel12.TabIndex = 2;
+            // 
+            // label20
+            // 
+            label20.Location = new Point(13, 52);
+            label20.Name = "label20";
+            label20.Size = new Size(300, 172);
+            label20.TabIndex = 2;
+            label20.Text = "- Для вычисления возраста, введите\r\n   день, месяц, год рождения в соотв.\r\n   поля и нажмите клавишу \"Вычислить\"";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label21.Location = new Point(13, 18);
+            label21.Name = "label21";
+            label21.Size = new Size(143, 23);
+            label21.TabIndex = 5;
+            label21.Text = "Точный возраст";
+            // 
+            // BackToRealAgeB
+            // 
+            BackToRealAgeB.Dock = DockStyle.Bottom;
+            BackToRealAgeB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            BackToRealAgeB.Location = new Point(0, 437);
+            BackToRealAgeB.Name = "BackToRealAgeB";
+            BackToRealAgeB.Size = new Size(373, 39);
+            BackToRealAgeB.TabIndex = 4;
+            BackToRealAgeB.Text = "Назад";
+            BackToRealAgeB.UseVisualStyleBackColor = true;
+            BackToRealAgeB.Click += BackToRealAgeB_Click;
             // 
             // MainForm
             // 
@@ -702,6 +939,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1625, 889);
+            Controls.Add(QuesRealAgeP);
             Controls.Add(RealAgeP);
             Controls.Add(TimeAndSecsP);
             Controls.Add(QuestionsS_TP);
@@ -737,7 +975,12 @@
             panel7.PerformLayout();
             TimeAndSecsP.ResumeLayout(false);
             RealAgeP.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             panel9.ResumeLayout(false);
+            QuesRealAgeP.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -799,5 +1042,26 @@
         private Button QuestionsB;
         private Panel panel9;
         private Label label14;
+        private Panel panel10;
+        private Label DayL;
+        private Label MonthL;
+        private Label YearL;
+        private TextBox DayTB;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private TextBox YearTB;
+        private TextBox MonthTB;
+        private Button CalcAgeB;
+        private Label ResultOrErrorAgeL;
+        private Label label18;
+        private Button FromRealAgeToMenuB;
+        private Button QuesRealAgeB;
+        private Panel QuesRealAgeP;
+        private Panel panel12;
+        private Label label19;
+        private Label label20;
+        private Label label21;
+        private Button BackToRealAgeB;
     }
 }

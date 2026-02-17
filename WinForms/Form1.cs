@@ -9,7 +9,7 @@ namespace WinForms2
             InitializeComponent();
 
             // Список всех панелей, которые должны быть на форме
-            Panel[] panels = { MenuP, QuestionsP, TimeAndSecsP, QuestionsS_TP };
+            Panel[] panels = { MenuP, QuestionsP, TimeAndSecsP, QuestionsS_TP, RealAgeP, QuesRealAgeP };
 
             foreach (var p in panels)
             {
@@ -31,6 +31,8 @@ namespace WinForms2
             QuestionsP.Visible = false;
             MenuP.Visible = false;
             TimeAndSecsP.Visible = false;
+            RealAgeP.Visible = false;
+            QuesRealAgeP.Visible = false;
 
             panel.Visible = true;
             panel.BringToFront();
@@ -50,6 +52,11 @@ namespace WinForms2
         private void TimeConvB_Click(object sender, EventArgs e)
         {
             OpenNeedPanel(TimeAndSecsP); //Переход к окну 1 задания
+        }
+
+        private void AgeCalcB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(RealAgeP); //Переход к окну 2 задания
         }
 
 
@@ -117,7 +124,7 @@ namespace WinForms2
 
             //Возвращяем время или ошибку
             if (time.flagError)
-                ErrorL2.Text = result;  
+                ErrorL2.Text = result;
             else
                 ResultSecondsL.Text = result;
         }
@@ -126,6 +133,46 @@ namespace WinForms2
         private void BackB1_Click(object sender, EventArgs e)
         {
             OpenNeedPanel(TimeAndSecsP); //Возврат к основному окну
+        }
+
+
+        //2 задание
+
+        private void FromRealAgeToMenuB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(MenuP); //Возврат к меню
+        }
+
+        private void QuesRealAgeB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(QuesRealAgeP); //Окно справки (2 задание)
+        }
+
+        private void BackToRealAgeB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(RealAgeP); //Возврат к основному окну
+        }
+
+        private void CalcAgeB_Click(object sender, EventArgs e) //Расчёты
+        {
+            //Уборка
+            ResultOrErrorAgeL.Text = null;
+
+            //if (DayTB.Text == "" || MonthTB.Text == "" || YearTB.Text == "")
+            //{
+
+            //}
+
+            string[] spawnDate = { DayTB.Text, MonthTB.Text, YearTB.Text };
+
+
+            Age age = new Age();
+            ResultOrErrorAgeL.Text = age.CalcAge(spawnDate);
+
+            if (age.flagError)
+                ResultOrErrorAgeL.ForeColor = Color.Red;
+            else
+                ResultOrErrorAgeL.ForeColor = Color.Black;
         }
     }
 }
