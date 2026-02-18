@@ -64,7 +64,6 @@
             ResultSecondsL = new Label();
             ErrorL2 = new Label();
             MinutsTB = new TextBox();
-            SecondsTB = new TextBox();
             CalcB2 = new Button();
             panel1 = new Panel();
             label10 = new Label();
@@ -105,6 +104,20 @@
             label20 = new Label();
             label21 = new Label();
             BackToRealAgeB = new Button();
+            panel11 = new Panel();
+            panel14 = new Panel();
+            label22 = new Label();
+            T_in_W_minTB = new TextBox();
+            T_in_W_secsTB = new TextBox();
+            DrawB = new Button();
+            T_in_W_hourTB = new TextBox();
+            pictureBox1 = new PictureBox();
+            SecondsTB = new TextBox();
+            ErrorL3 = new Label();
+            From_T_in_W_ToMenuB = new Button();
+            T_in_W_quesB = new Button();
+            panel13 = new Panel();
+            label23 = new Label();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
@@ -127,6 +140,10 @@
             panel9.SuspendLayout();
             QuesRealAgeP.SuspendLayout();
             panel12.SuspendLayout();
+            panel11.SuspendLayout();
+            panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // MenuP
@@ -135,7 +152,7 @@
             MenuP.Controls.Add(QuestionsB);
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(548, 3);
+            MenuP.Location = new Point(713, 0);
             MenuP.Name = "MenuP";
             MenuP.Size = new Size(400, 500);
             MenuP.TabIndex = 0;
@@ -220,7 +237,7 @@
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(548, 509);
+            QuestionsP.Location = new Point(713, 506);
             QuestionsP.Name = "QuestionsP";
             QuestionsP.Size = new Size(400, 500);
             QuestionsP.TabIndex = 1;
@@ -310,10 +327,10 @@
             // 
             TimeAndSecsTC.Controls.Add(SecToTimeTP);
             TimeAndSecsTC.Controls.Add(tabPage1);
-            TimeAndSecsTC.Location = new Point(0, 3);
+            TimeAndSecsTC.Location = new Point(3, 3);
             TimeAndSecsTC.Name = "TimeAndSecsTC";
             TimeAndSecsTC.SelectedIndex = 0;
-            TimeAndSecsTC.Size = new Size(400, 494);
+            TimeAndSecsTC.Size = new Size(394, 494);
             TimeAndSecsTC.TabIndex = 5;
             // 
             // SecToTimeTP
@@ -332,7 +349,7 @@
             SecToTimeTP.Location = new Point(4, 29);
             SecToTimeTP.Name = "SecToTimeTP";
             SecToTimeTP.Padding = new Padding(3);
-            SecToTimeTP.Size = new Size(392, 461);
+            SecToTimeTP.Size = new Size(386, 461);
             SecToTimeTP.TabIndex = 0;
             SecToTimeTP.Text = "Секунды ➝ Время";
             // 
@@ -342,7 +359,7 @@
             ResultTimeL.Font = new Font("Segoe UI", 15F);
             ResultTimeL.Location = new Point(237, 129);
             ResultTimeL.Name = "ResultTimeL";
-            ResultTimeL.Size = new Size(149, 42);
+            ResultTimeL.Size = new Size(143, 42);
             ResultTimeL.TabIndex = 15;
             ResultTimeL.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -353,13 +370,13 @@
             ErrorL1.ForeColor = Color.Red;
             ErrorL1.Location = new Point(7, 323);
             ErrorL1.Name = "ErrorL1";
-            ErrorL1.Size = new Size(379, 64);
+            ErrorL1.Size = new Size(373, 64);
             ErrorL1.TabIndex = 14;
             // 
             // FromT_S_To_MenuB
             // 
             FromT_S_To_MenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            FromT_S_To_MenuB.Location = new Point(7, 424);
+            FromT_S_To_MenuB.Location = new Point(3, 424);
             FromT_S_To_MenuB.Name = "FromT_S_To_MenuB";
             FromT_S_To_MenuB.Size = new Size(81, 34);
             FromT_S_To_MenuB.TabIndex = 13;
@@ -371,7 +388,7 @@
             // 
             questionsT_SB.Cursor = Cursors.Help;
             questionsT_SB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            questionsT_SB.Location = new Point(351, 423);
+            questionsT_SB.Location = new Point(348, 423);
             questionsT_SB.Name = "questionsT_SB";
             questionsT_SB.Size = new Size(35, 35);
             questionsT_SB.TabIndex = 12;
@@ -402,7 +419,7 @@
             CalcB1.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
             CalcB1.Location = new Point(7, 199);
             CalcB1.Name = "CalcB1";
-            CalcB1.Size = new Size(379, 51);
+            CalcB1.Size = new Size(373, 51);
             CalcB1.TabIndex = 9;
             CalcB1.Text = "Рассчитать";
             CalcB1.UseVisualStyleBackColor = true;
@@ -445,7 +462,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(386, 74);
+            panel2.Size = new Size(380, 74);
             panel2.TabIndex = 5;
             // 
             // label5
@@ -475,7 +492,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(392, 461);
+            tabPage1.Size = new Size(386, 461);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Время ➝ секунды";
             // 
@@ -485,7 +502,7 @@
             ResultSecondsL.Font = new Font("Segoe UI", 15F);
             ResultSecondsL.Location = new Point(238, 129);
             ResultSecondsL.Name = "ResultSecondsL";
-            ResultSecondsL.Size = new Size(154, 42);
+            ResultSecondsL.Size = new Size(145, 42);
             ResultSecondsL.TabIndex = 26;
             ResultSecondsL.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -496,7 +513,7 @@
             ErrorL2.ForeColor = Color.Red;
             ErrorL2.Location = new Point(5, 322);
             ErrorL2.Name = "ErrorL2";
-            ErrorL2.Size = new Size(385, 64);
+            ErrorL2.Size = new Size(378, 64);
             ErrorL2.TabIndex = 25;
             // 
             // MinutsTB
@@ -511,23 +528,12 @@
             MinutsTB.Size = new Size(50, 42);
             MinutsTB.TabIndex = 24;
             // 
-            // SecondsTB
-            // 
-            SecondsTB.Cursor = Cursors.IBeam;
-            SecondsTB.Font = new Font("Segoe UI", 15F);
-            SecondsTB.Location = new Point(107, 128);
-            SecondsTB.MaxLength = 2;
-            SecondsTB.Multiline = true;
-            SecondsTB.Name = "SecondsTB";
-            SecondsTB.Size = new Size(50, 42);
-            SecondsTB.TabIndex = 23;
-            // 
             // CalcB2
             // 
             CalcB2.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
             CalcB2.Location = new Point(7, 198);
             CalcB2.Name = "CalcB2";
-            CalcB2.Size = new Size(385, 51);
+            CalcB2.Size = new Size(376, 51);
             CalcB2.TabIndex = 18;
             CalcB2.Text = "Рассчитать";
             CalcB2.UseVisualStyleBackColor = true;
@@ -586,7 +592,7 @@
             // FromS_T_To_MenuB
             // 
             FromS_T_To_MenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            FromS_T_To_MenuB.Location = new Point(7, 426);
+            FromS_T_To_MenuB.Location = new Point(3, 424);
             FromS_T_To_MenuB.Name = "FromS_T_To_MenuB";
             FromS_T_To_MenuB.Size = new Size(81, 34);
             FromS_T_To_MenuB.TabIndex = 22;
@@ -598,9 +604,9 @@
             // 
             questionsS_TB.Cursor = Cursors.Help;
             questionsS_TB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            questionsS_TB.Location = new Point(366, 426);
+            questionsS_TB.Location = new Point(351, 423);
             questionsS_TB.Name = "questionsS_TB";
-            questionsS_TB.Size = new Size(29, 34);
+            questionsS_TB.Size = new Size(35, 35);
             questionsS_TB.TabIndex = 21;
             questionsS_TB.Text = "?";
             questionsS_TB.UseVisualStyleBackColor = true;
@@ -628,7 +634,7 @@
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
             QuestionsS_TP.Controls.Add(panel7);
-            QuestionsS_TP.Location = new Point(954, 509);
+            QuestionsS_TP.Location = new Point(1119, 506);
             QuestionsS_TP.Name = "QuestionsS_TP";
             QuestionsS_TP.Size = new Size(400, 500);
             QuestionsS_TP.TabIndex = 3;
@@ -687,7 +693,7 @@
             // 
             TimeAndSecsP.BackColor = Color.Silver;
             TimeAndSecsP.Controls.Add(TimeAndSecsTC);
-            TimeAndSecsP.Location = new Point(954, 3);
+            TimeAndSecsP.Location = new Point(1119, 0);
             TimeAndSecsP.Name = "TimeAndSecsP";
             TimeAndSecsP.Size = new Size(400, 500);
             TimeAndSecsP.TabIndex = 6;
@@ -699,7 +705,7 @@
             RealAgeP.Controls.Add(QuesRealAgeB);
             RealAgeP.Controls.Add(panel10);
             RealAgeP.Controls.Add(panel9);
-            RealAgeP.Location = new Point(1360, 0);
+            RealAgeP.Location = new Point(1555, 0);
             RealAgeP.Name = "RealAgeP";
             RealAgeP.Size = new Size(400, 500);
             RealAgeP.TabIndex = 7;
@@ -889,7 +895,7 @@
             // 
             QuesRealAgeP.BackColor = Color.LightGray;
             QuesRealAgeP.Controls.Add(panel12);
-            QuesRealAgeP.Location = new Point(1360, 509);
+            QuesRealAgeP.Location = new Point(1525, 506);
             QuesRealAgeP.Name = "QuesRealAgeP";
             QuesRealAgeP.Size = new Size(400, 500);
             QuesRealAgeP.TabIndex = 8;
@@ -935,12 +941,165 @@
             BackToRealAgeB.UseVisualStyleBackColor = true;
             BackToRealAgeB.Click += BackToRealAgeB_Click;
             // 
+            // panel11
+            // 
+            panel11.BackColor = Color.LightGray;
+            panel11.Controls.Add(ErrorL3);
+            panel11.Controls.Add(From_T_in_W_ToMenuB);
+            panel11.Controls.Add(T_in_W_quesB);
+            panel11.Controls.Add(panel13);
+            panel11.Controls.Add(pictureBox1);
+            panel11.Controls.Add(T_in_W_minTB);
+            panel11.Controls.Add(T_in_W_secsTB);
+            panel11.Controls.Add(DrawB);
+            panel11.Controls.Add(panel14);
+            panel11.Controls.Add(T_in_W_hourTB);
+            panel11.Location = new Point(31, 3);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(600, 500);
+            panel11.TabIndex = 9;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.DarkGray;
+            panel14.Controls.Add(label22);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(600, 68);
+            panel14.TabIndex = 0;
+            // 
+            // label22
+            // 
+            label22.Dock = DockStyle.Top;
+            label22.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label22.Location = new Point(0, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(600, 68);
+            label22.TabIndex = 5;
+            label22.Text = "Время на часах";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // T_in_W_minTB
+            // 
+            T_in_W_minTB.Cursor = Cursors.IBeam;
+            T_in_W_minTB.Font = new Font("Segoe UI", 15F);
+            T_in_W_minTB.ForeColor = SystemColors.WindowText;
+            T_in_W_minTB.Location = new Point(71, 96);
+            T_in_W_minTB.MaxLength = 2;
+            T_in_W_minTB.Multiline = true;
+            T_in_W_minTB.Name = "T_in_W_minTB";
+            T_in_W_minTB.Size = new Size(55, 42);
+            T_in_W_minTB.TabIndex = 28;
+            // 
+            // T_in_W_secsTB
+            // 
+            T_in_W_secsTB.Cursor = Cursors.IBeam;
+            T_in_W_secsTB.Font = new Font("Segoe UI", 15F);
+            T_in_W_secsTB.Location = new Point(128, 96);
+            T_in_W_secsTB.MaxLength = 2;
+            T_in_W_secsTB.Multiline = true;
+            T_in_W_secsTB.Name = "T_in_W_secsTB";
+            T_in_W_secsTB.Size = new Size(55, 42);
+            T_in_W_secsTB.TabIndex = 27;
+            // 
+            // DrawB
+            // 
+            DrawB.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            DrawB.Location = new Point(14, 146);
+            DrawB.Name = "DrawB";
+            DrawB.Size = new Size(169, 51);
+            DrawB.TabIndex = 26;
+            DrawB.Text = "Нарисовать";
+            DrawB.UseVisualStyleBackColor = true;
+            // 
+            // T_in_W_hourTB
+            // 
+            T_in_W_hourTB.Cursor = Cursors.IBeam;
+            T_in_W_hourTB.Font = new Font("Segoe UI", 15F);
+            T_in_W_hourTB.ForeColor = SystemColors.WindowText;
+            T_in_W_hourTB.Location = new Point(14, 96);
+            T_in_W_hourTB.MaxLength = 2;
+            T_in_W_hourTB.Multiline = true;
+            T_in_W_hourTB.Name = "T_in_W_hourTB";
+            T_in_W_hourTB.Size = new Size(55, 42);
+            T_in_W_hourTB.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(217, 96);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 350);
+            pictureBox1.TabIndex = 29;
+            pictureBox1.TabStop = false;
+            // 
+            // SecondsTB
+            // 
+            SecondsTB.Cursor = Cursors.IBeam;
+            SecondsTB.Font = new Font("Segoe UI", 15F);
+            SecondsTB.Location = new Point(107, 128);
+            SecondsTB.MaxLength = 2;
+            SecondsTB.Multiline = true;
+            SecondsTB.Name = "SecondsTB";
+            SecondsTB.Size = new Size(50, 42);
+            SecondsTB.TabIndex = 23;
+            // 
+            // ErrorL3
+            // 
+            ErrorL3.BackColor = Color.White;
+            ErrorL3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            ErrorL3.ForeColor = Color.Red;
+            ErrorL3.Location = new Point(14, 282);
+            ErrorL3.Name = "ErrorL3";
+            ErrorL3.Size = new Size(169, 85);
+            ErrorL3.TabIndex = 33;
+            // 
+            // From_T_in_W_ToMenuB
+            // 
+            From_T_in_W_ToMenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            From_T_in_W_ToMenuB.Location = new Point(3, 463);
+            From_T_in_W_ToMenuB.Name = "From_T_in_W_ToMenuB";
+            From_T_in_W_ToMenuB.Size = new Size(81, 34);
+            From_T_in_W_ToMenuB.TabIndex = 32;
+            From_T_in_W_ToMenuB.Text = "Меню";
+            From_T_in_W_ToMenuB.UseVisualStyleBackColor = true;
+            // 
+            // T_in_W_quesB
+            // 
+            T_in_W_quesB.Cursor = Cursors.Help;
+            T_in_W_quesB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            T_in_W_quesB.Location = new Point(562, 461);
+            T_in_W_quesB.Name = "T_in_W_quesB";
+            T_in_W_quesB.Size = new Size(35, 35);
+            T_in_W_quesB.TabIndex = 31;
+            T_in_W_quesB.Text = "?";
+            T_in_W_quesB.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.Silver;
+            panel13.Controls.Add(label23);
+            panel13.Location = new Point(14, 241);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(81, 35);
+            panel13.TabIndex = 30;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(5, 8);
+            label23.Name = "label23";
+            label23.Size = new Size(68, 20);
+            label23.TabIndex = 0;
+            label23.Text = "Ошибка:";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1761, 916);
+            Controls.Add(panel11);
             Controls.Add(QuesRealAgeP);
             Controls.Add(RealAgeP);
             Controls.Add(TimeAndSecsP);
@@ -985,6 +1144,12 @@
             QuesRealAgeP.ResumeLayout(false);
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1036,7 +1201,6 @@
         private Panel panel8;
         private Label label9;
         private TextBox MinutsTB;
-        private TextBox SecondsTB;
         private Label ErrorL1;
         private Label ResultTimeL;
         private Label ErrorL2;
@@ -1063,9 +1227,22 @@
         private Button QuesRealAgeB;
         private Panel QuesRealAgeP;
         private Panel panel12;
-        private Label label19;
+        private Label ErrorL3;
         private Label label20;
         private Label label21;
         private Button BackToRealAgeB;
+        private Panel panel11;
+        private Panel panel14;
+        private Label label22;
+        private TextBox T_in_W_minTB;
+        private TextBox T_in_W_secsTB;
+        private Button DrawB;
+        private TextBox T_in_W_hourTB;
+        private PictureBox pictureBox1;
+        private TextBox SecondsTB;
+        private Button From_T_in_W_ToMenuB;
+        private Button T_in_W_quesB;
+        private Panel panel13;
+        private Label label23;
     }
 }
