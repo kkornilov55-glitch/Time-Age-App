@@ -947,6 +947,8 @@
             Controls.Add(QuestionsS_TP);
             Controls.Add(MenuP);
             Controls.Add(QuestionsP);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "Лаб. работа №2";
             MenuP.ResumeLayout(false);
