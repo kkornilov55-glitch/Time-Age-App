@@ -135,7 +135,7 @@
             MenuP.Controls.Add(QuestionsB);
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(1200, 24);
+            MenuP.Location = new Point(548, 3);
             MenuP.Name = "MenuP";
             MenuP.Size = new Size(400, 500);
             MenuP.TabIndex = 0;
@@ -220,7 +220,7 @@
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(351, 545);
+            QuestionsP.Location = new Point(548, 509);
             QuestionsP.Name = "QuestionsP";
             QuestionsP.Size = new Size(400, 500);
             QuestionsP.TabIndex = 1;
@@ -628,7 +628,7 @@
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
             QuestionsS_TP.Controls.Add(panel7);
-            QuestionsS_TP.Location = new Point(787, 545);
+            QuestionsS_TP.Location = new Point(954, 509);
             QuestionsS_TP.Name = "QuestionsS_TP";
             QuestionsS_TP.Size = new Size(400, 500);
             QuestionsS_TP.TabIndex = 3;
@@ -687,7 +687,7 @@
             // 
             TimeAndSecsP.BackColor = Color.Silver;
             TimeAndSecsP.Controls.Add(TimeAndSecsTC);
-            TimeAndSecsP.Location = new Point(787, 24);
+            TimeAndSecsP.Location = new Point(954, 3);
             TimeAndSecsP.Name = "TimeAndSecsP";
             TimeAndSecsP.Size = new Size(400, 500);
             TimeAndSecsP.TabIndex = 6;
@@ -699,7 +699,7 @@
             RealAgeP.Controls.Add(QuesRealAgeB);
             RealAgeP.Controls.Add(panel10);
             RealAgeP.Controls.Add(panel9);
-            RealAgeP.Location = new Point(1615, 24);
+            RealAgeP.Location = new Point(1360, 0);
             RealAgeP.Name = "RealAgeP";
             RealAgeP.Size = new Size(400, 500);
             RealAgeP.TabIndex = 7;
@@ -889,7 +889,7 @@
             // 
             QuesRealAgeP.BackColor = Color.LightGray;
             QuesRealAgeP.Controls.Add(panel12);
-            QuesRealAgeP.Location = new Point(1200, 545);
+            QuesRealAgeP.Location = new Point(1360, 509);
             QuesRealAgeP.Name = "QuesRealAgeP";
             QuesRealAgeP.Size = new Size(400, 500);
             QuesRealAgeP.TabIndex = 8;
@@ -940,7 +940,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1646, 916);
+            ClientSize = new Size(1761, 916);
             Controls.Add(QuesRealAgeP);
             Controls.Add(RealAgeP);
             Controls.Add(TimeAndSecsP);
