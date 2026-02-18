@@ -21,8 +21,12 @@ namespace WinForms2
                     // Добавляем на форму
                     this.Controls.Add(p);
                 }
+
+                p.Location = new Point(0, 0); //Располагаем панели в левом верхнем углу
             }
             OpenNeedPanel(MenuP);
+
+            this.ClientSize = RealAgeP.Size; //Размер окна формы без рамок и интерфейса (ClientSize) равен размеру окна (Можно любое, они все 400x500)
         }
 
         private void OpenNeedPanel(Panel panel)
@@ -35,7 +39,7 @@ namespace WinForms2
             QuesRealAgeP.Visible = false;
 
             panel.Visible = true;
-            panel.BringToFront();
+            //panel.Dock = DockStyle.Fill; //Пытался просто растянуть панель по окну
         }
 
         //МЕНЮ
@@ -44,14 +48,14 @@ namespace WinForms2
             OpenNeedPanel(MenuP); //Возврат к меню из окна справки
         }
 
-        private void QuestionsB_Click(object sender, EventArgs e)
-        {
-            OpenNeedPanel(QuestionsP); //Переход к окну справки (Меню)
-        }
-
         private void TimeConvB_Click(object sender, EventArgs e)
         {
             OpenNeedPanel(TimeAndSecsP); //Переход к окну 1 задания
+        }
+
+        private void QuestionsB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(QuestionsP); //Переход к окну справки (Меню)
         }
 
         private void AgeCalcB_Click(object sender, EventArgs e)

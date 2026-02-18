@@ -135,7 +135,7 @@
             MenuP.Controls.Add(QuestionsB);
             MenuP.Controls.Add(MenuButtonsP);
             MenuP.Controls.Add(MenuHeadP);
-            MenuP.Location = new Point(317, 807);
+            MenuP.Location = new Point(1200, 24);
             MenuP.Name = "MenuP";
             MenuP.Size = new Size(400, 500);
             MenuP.TabIndex = 0;
@@ -150,6 +150,7 @@
             QuestionsB.TabIndex = 5;
             QuestionsB.Text = "Справка";
             QuestionsB.UseVisualStyleBackColor = true;
+            QuestionsB.Click += QuestionsB_Click;
             // 
             // MenuButtonsP
             // 
@@ -219,9 +220,9 @@
             // 
             QuestionsP.BackColor = Color.LightGray;
             QuestionsP.Controls.Add(panel3);
-            QuestionsP.Location = new Point(1020, 549);
+            QuestionsP.Location = new Point(351, 545);
             QuestionsP.Name = "QuestionsP";
-            QuestionsP.Size = new Size(406, 497);
+            QuestionsP.Size = new Size(400, 500);
             QuestionsP.TabIndex = 1;
             // 
             // panel3
@@ -234,9 +235,9 @@
             panel3.Controls.Add(TimeAndSecsTextL);
             panel3.Controls.Add(TimaAndSecsHeadL);
             panel3.Controls.Add(GoToMenuB);
-            panel3.Location = new Point(14, 12);
+            panel3.Location = new Point(0, 12);
             panel3.Name = "panel3";
-            panel3.Size = new Size(378, 471);
+            panel3.Size = new Size(400, 488);
             panel3.TabIndex = 2;
             // 
             // label3
@@ -297,9 +298,9 @@
             // 
             GoToMenuB.Dock = DockStyle.Bottom;
             GoToMenuB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            GoToMenuB.Location = new Point(0, 432);
+            GoToMenuB.Location = new Point(0, 449);
             GoToMenuB.Name = "GoToMenuB";
-            GoToMenuB.Size = new Size(378, 39);
+            GoToMenuB.Size = new Size(400, 39);
             GoToMenuB.TabIndex = 4;
             GoToMenuB.Text = "К меню";
             GoToMenuB.UseVisualStyleBackColor = true;
@@ -312,7 +313,7 @@
             TimeAndSecsTC.Location = new Point(0, 3);
             TimeAndSecsTC.Name = "TimeAndSecsTC";
             TimeAndSecsTC.SelectedIndex = 0;
-            TimeAndSecsTC.Size = new Size(400, 499);
+            TimeAndSecsTC.Size = new Size(400, 494);
             TimeAndSecsTC.TabIndex = 5;
             // 
             // SecToTimeTP
@@ -331,7 +332,7 @@
             SecToTimeTP.Location = new Point(4, 29);
             SecToTimeTP.Name = "SecToTimeTP";
             SecToTimeTP.Padding = new Padding(3);
-            SecToTimeTP.Size = new Size(392, 466);
+            SecToTimeTP.Size = new Size(392, 461);
             SecToTimeTP.TabIndex = 0;
             SecToTimeTP.Text = "Секунды ➝ Время";
             // 
@@ -341,7 +342,7 @@
             ResultTimeL.Font = new Font("Segoe UI", 15F);
             ResultTimeL.Location = new Point(237, 129);
             ResultTimeL.Name = "ResultTimeL";
-            ResultTimeL.Size = new Size(154, 42);
+            ResultTimeL.Size = new Size(149, 42);
             ResultTimeL.TabIndex = 15;
             ResultTimeL.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -350,15 +351,15 @@
             ErrorL1.BackColor = Color.White;
             ErrorL1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
             ErrorL1.ForeColor = Color.Red;
-            ErrorL1.Location = new Point(6, 323);
+            ErrorL1.Location = new Point(7, 323);
             ErrorL1.Name = "ErrorL1";
-            ErrorL1.Size = new Size(385, 64);
+            ErrorL1.Size = new Size(379, 64);
             ErrorL1.TabIndex = 14;
             // 
             // FromT_S_To_MenuB
             // 
             FromT_S_To_MenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            FromT_S_To_MenuB.Location = new Point(7, 427);
+            FromT_S_To_MenuB.Location = new Point(7, 424);
             FromT_S_To_MenuB.Name = "FromT_S_To_MenuB";
             FromT_S_To_MenuB.Size = new Size(81, 34);
             FromT_S_To_MenuB.TabIndex = 13;
@@ -370,9 +371,9 @@
             // 
             questionsT_SB.Cursor = Cursors.Help;
             questionsT_SB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            questionsT_SB.Location = new Point(366, 427);
+            questionsT_SB.Location = new Point(351, 423);
             questionsT_SB.Name = "questionsT_SB";
-            questionsT_SB.Size = new Size(29, 34);
+            questionsT_SB.Size = new Size(35, 35);
             questionsT_SB.TabIndex = 12;
             questionsT_SB.Text = "?";
             questionsT_SB.UseVisualStyleBackColor = true;
@@ -401,7 +402,7 @@
             CalcB1.Font = new Font("Yu Gothic UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
             CalcB1.Location = new Point(7, 199);
             CalcB1.Name = "CalcB1";
-            CalcB1.Size = new Size(385, 51);
+            CalcB1.Size = new Size(379, 51);
             CalcB1.TabIndex = 9;
             CalcB1.Text = "Рассчитать";
             CalcB1.UseVisualStyleBackColor = true;
@@ -430,20 +431,21 @@
             // 
             SecTB.Cursor = Cursors.IBeam;
             SecTB.Font = new Font("Segoe UI", 15F);
-            SecTB.Location = new Point(3, 129);
+            SecTB.Location = new Point(7, 129);
             SecTB.MaxLength = 10;
             SecTB.Multiline = true;
             SecTB.Name = "SecTB";
-            SecTB.Size = new Size(154, 42);
+            SecTB.Size = new Size(150, 42);
             SecTB.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.BackColor = Color.DarkGray;
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(7, 6);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(385, 68);
+            panel2.Size = new Size(386, 74);
             panel2.TabIndex = 5;
             // 
             // label5
@@ -473,7 +475,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(392, 466);
+            tabPage1.Size = new Size(392, 461);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Время ➝ секунды";
             // 
@@ -626,9 +628,9 @@
             // 
             QuestionsS_TP.BackColor = Color.LightGray;
             QuestionsS_TP.Controls.Add(panel7);
-            QuestionsS_TP.Location = new Point(1566, 38);
+            QuestionsS_TP.Location = new Point(787, 545);
             QuestionsS_TP.Name = "QuestionsS_TP";
-            QuestionsS_TP.Size = new Size(406, 497);
+            QuestionsS_TP.Size = new Size(400, 500);
             QuestionsS_TP.TabIndex = 3;
             // 
             // panel7
@@ -638,9 +640,9 @@
             panel7.Controls.Add(label12);
             panel7.Controls.Add(label13);
             panel7.Controls.Add(BackB1);
-            panel7.Location = new Point(14, 12);
+            panel7.Location = new Point(0, 12);
             panel7.Name = "panel7";
-            panel7.Size = new Size(364, 426);
+            panel7.Size = new Size(400, 488);
             panel7.TabIndex = 2;
             // 
             // label8
@@ -673,9 +675,9 @@
             // 
             BackB1.Dock = DockStyle.Bottom;
             BackB1.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            BackB1.Location = new Point(0, 387);
+            BackB1.Location = new Point(0, 449);
             BackB1.Name = "BackB1";
-            BackB1.Size = new Size(364, 39);
+            BackB1.Size = new Size(400, 39);
             BackB1.TabIndex = 4;
             BackB1.Text = "Назад";
             BackB1.UseVisualStyleBackColor = true;
@@ -685,7 +687,7 @@
             // 
             TimeAndSecsP.BackColor = Color.Silver;
             TimeAndSecsP.Controls.Add(TimeAndSecsTC);
-            TimeAndSecsP.Location = new Point(1004, 12);
+            TimeAndSecsP.Location = new Point(787, 24);
             TimeAndSecsP.Name = "TimeAndSecsP";
             TimeAndSecsP.Size = new Size(400, 500);
             TimeAndSecsP.TabIndex = 6;
@@ -697,7 +699,7 @@
             RealAgeP.Controls.Add(QuesRealAgeB);
             RealAgeP.Controls.Add(panel10);
             RealAgeP.Controls.Add(panel9);
-            RealAgeP.Location = new Point(63, 44);
+            RealAgeP.Location = new Point(1615, 24);
             RealAgeP.Name = "RealAgeP";
             RealAgeP.Size = new Size(400, 500);
             RealAgeP.TabIndex = 7;
@@ -887,7 +889,7 @@
             // 
             QuesRealAgeP.BackColor = Color.LightGray;
             QuesRealAgeP.Controls.Add(panel12);
-            QuesRealAgeP.Location = new Point(517, 47);
+            QuesRealAgeP.Location = new Point(1200, 545);
             QuesRealAgeP.Name = "QuesRealAgeP";
             QuesRealAgeP.Size = new Size(400, 500);
             QuesRealAgeP.TabIndex = 8;
@@ -898,9 +900,9 @@
             panel12.Controls.Add(label20);
             panel12.Controls.Add(label21);
             panel12.Controls.Add(BackToRealAgeB);
-            panel12.Location = new Point(14, 12);
+            panel12.Location = new Point(0, 12);
             panel12.Name = "panel12";
-            panel12.Size = new Size(373, 476);
+            panel12.Size = new Size(400, 488);
             panel12.TabIndex = 2;
             // 
             // label20
@@ -925,9 +927,9 @@
             // 
             BackToRealAgeB.Dock = DockStyle.Bottom;
             BackToRealAgeB.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            BackToRealAgeB.Location = new Point(0, 437);
+            BackToRealAgeB.Location = new Point(0, 449);
             BackToRealAgeB.Name = "BackToRealAgeB";
-            BackToRealAgeB.Size = new Size(373, 39);
+            BackToRealAgeB.Size = new Size(400, 39);
             BackToRealAgeB.TabIndex = 4;
             BackToRealAgeB.Text = "Назад";
             BackToRealAgeB.UseVisualStyleBackColor = true;
@@ -938,7 +940,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1625, 889);
+            ClientSize = new Size(1646, 916);
             Controls.Add(QuesRealAgeP);
             Controls.Add(RealAgeP);
             Controls.Add(TimeAndSecsP);
@@ -946,7 +948,7 @@
             Controls.Add(MenuP);
             Controls.Add(QuestionsP);
             Name = "MainForm";
-            Text = "Лабораторная работа №2";
+            Text = "Лаб. работа №2";
             MenuP.ResumeLayout(false);
             MenuButtonsP.ResumeLayout(false);
             MenuHeadP.ResumeLayout(false);
