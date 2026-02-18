@@ -64,6 +64,7 @@
             ResultSecondsL = new Label();
             ErrorL2 = new Label();
             MinutsTB = new TextBox();
+            SecondsTB = new TextBox();
             CalcB2 = new Button();
             panel1 = new Panel();
             label10 = new Label();
@@ -104,20 +105,24 @@
             label20 = new Label();
             label21 = new Label();
             BackToRealAgeB = new Button();
-            panel11 = new Panel();
-            panel14 = new Panel();
-            label22 = new Label();
-            T_in_W_minTB = new TextBox();
-            T_in_W_secsTB = new TextBox();
-            DrawB = new Button();
-            T_in_W_hourTB = new TextBox();
-            pictureBox1 = new PictureBox();
-            SecondsTB = new TextBox();
+            T_in_W_P = new Panel();
             ErrorL3 = new Label();
             From_T_in_W_ToMenuB = new Button();
             T_in_W_quesB = new Button();
             panel13 = new Panel();
             label23 = new Label();
+            pictureBox1 = new PictureBox();
+            T_in_W_minTB = new TextBox();
+            T_in_W_secsTB = new TextBox();
+            DrawB = new Button();
+            panel14 = new Panel();
+            label22 = new Label();
+            T_in_W_hourTB = new TextBox();
+            ques_T_in_W_P = new Panel();
+            panel16 = new Panel();
+            label27 = new Label();
+            label28 = new Label();
+            backTo_T_in_W_B = new Button();
             MenuP.SuspendLayout();
             MenuButtonsP.SuspendLayout();
             MenuHeadP.SuspendLayout();
@@ -140,10 +145,12 @@
             panel9.SuspendLayout();
             QuesRealAgeP.SuspendLayout();
             panel12.SuspendLayout();
-            panel11.SuspendLayout();
-            panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            T_in_W_P.SuspendLayout();
             panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel14.SuspendLayout();
+            ques_T_in_W_P.SuspendLayout();
+            panel16.SuspendLayout();
             SuspendLayout();
             // 
             // MenuP
@@ -189,6 +196,7 @@
             WatchPaintB.TabIndex = 2;
             WatchPaintB.Text = "Время на часах";
             WatchPaintB.UseVisualStyleBackColor = true;
+            WatchPaintB.Click += WatchPaintB_Click;
             // 
             // AgeCalcB
             // 
@@ -527,6 +535,17 @@
             MinutsTB.Name = "MinutsTB";
             MinutsTB.Size = new Size(50, 42);
             MinutsTB.TabIndex = 24;
+            // 
+            // SecondsTB
+            // 
+            SecondsTB.Cursor = Cursors.IBeam;
+            SecondsTB.Font = new Font("Segoe UI", 15F);
+            SecondsTB.Location = new Point(107, 128);
+            SecondsTB.MaxLength = 2;
+            SecondsTB.Multiline = true;
+            SecondsTB.Name = "SecondsTB";
+            SecondsTB.Size = new Size(50, 42);
+            SecondsTB.TabIndex = 23;
             // 
             // CalcB2
             // 
@@ -941,44 +960,82 @@
             BackToRealAgeB.UseVisualStyleBackColor = true;
             BackToRealAgeB.Click += BackToRealAgeB_Click;
             // 
-            // panel11
+            // T_in_W_P
             // 
-            panel11.BackColor = Color.LightGray;
-            panel11.Controls.Add(ErrorL3);
-            panel11.Controls.Add(From_T_in_W_ToMenuB);
-            panel11.Controls.Add(T_in_W_quesB);
-            panel11.Controls.Add(panel13);
-            panel11.Controls.Add(pictureBox1);
-            panel11.Controls.Add(T_in_W_minTB);
-            panel11.Controls.Add(T_in_W_secsTB);
-            panel11.Controls.Add(DrawB);
-            panel11.Controls.Add(panel14);
-            panel11.Controls.Add(T_in_W_hourTB);
-            panel11.Location = new Point(31, 3);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(600, 500);
-            panel11.TabIndex = 9;
+            T_in_W_P.BackColor = Color.LightGray;
+            T_in_W_P.Controls.Add(ErrorL3);
+            T_in_W_P.Controls.Add(From_T_in_W_ToMenuB);
+            T_in_W_P.Controls.Add(T_in_W_quesB);
+            T_in_W_P.Controls.Add(panel13);
+            T_in_W_P.Controls.Add(pictureBox1);
+            T_in_W_P.Controls.Add(T_in_W_minTB);
+            T_in_W_P.Controls.Add(T_in_W_secsTB);
+            T_in_W_P.Controls.Add(DrawB);
+            T_in_W_P.Controls.Add(panel14);
+            T_in_W_P.Controls.Add(T_in_W_hourTB);
+            T_in_W_P.Location = new Point(31, 3);
+            T_in_W_P.Name = "T_in_W_P";
+            T_in_W_P.Size = new Size(600, 500);
+            T_in_W_P.TabIndex = 9;
             // 
-            // panel14
+            // ErrorL3
             // 
-            panel14.BackColor = Color.DarkGray;
-            panel14.Controls.Add(label22);
-            panel14.Dock = DockStyle.Top;
-            panel14.Location = new Point(0, 0);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(600, 68);
-            panel14.TabIndex = 0;
+            ErrorL3.BackColor = Color.White;
+            ErrorL3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            ErrorL3.ForeColor = Color.Red;
+            ErrorL3.Location = new Point(14, 282);
+            ErrorL3.Name = "ErrorL3";
+            ErrorL3.Size = new Size(169, 85);
+            ErrorL3.TabIndex = 33;
             // 
-            // label22
+            // From_T_in_W_ToMenuB
             // 
-            label22.Dock = DockStyle.Top;
-            label22.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            label22.Location = new Point(0, 0);
-            label22.Name = "label22";
-            label22.Size = new Size(600, 68);
-            label22.TabIndex = 5;
-            label22.Text = "Время на часах";
-            label22.TextAlign = ContentAlignment.MiddleCenter;
+            From_T_in_W_ToMenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            From_T_in_W_ToMenuB.Location = new Point(3, 463);
+            From_T_in_W_ToMenuB.Name = "From_T_in_W_ToMenuB";
+            From_T_in_W_ToMenuB.Size = new Size(81, 34);
+            From_T_in_W_ToMenuB.TabIndex = 32;
+            From_T_in_W_ToMenuB.Text = "Меню";
+            From_T_in_W_ToMenuB.UseVisualStyleBackColor = true;
+            From_T_in_W_ToMenuB.Click += From_T_in_W_ToMenuB_Click;
+            // 
+            // T_in_W_quesB
+            // 
+            T_in_W_quesB.Cursor = Cursors.Help;
+            T_in_W_quesB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            T_in_W_quesB.Location = new Point(562, 461);
+            T_in_W_quesB.Name = "T_in_W_quesB";
+            T_in_W_quesB.Size = new Size(35, 35);
+            T_in_W_quesB.TabIndex = 31;
+            T_in_W_quesB.Text = "?";
+            T_in_W_quesB.UseVisualStyleBackColor = true;
+            T_in_W_quesB.Click += T_in_W_quesB_Click;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.Silver;
+            panel13.Controls.Add(label23);
+            panel13.Location = new Point(14, 241);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(81, 35);
+            panel13.TabIndex = 30;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(5, 8);
+            label23.Name = "label23";
+            label23.Size = new Size(68, 20);
+            label23.TabIndex = 0;
+            label23.Text = "Ошибка:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(217, 96);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(350, 350);
+            pictureBox1.TabIndex = 29;
+            pictureBox1.TabStop = false;
             // 
             // T_in_W_minTB
             // 
@@ -1012,6 +1069,28 @@
             DrawB.TabIndex = 26;
             DrawB.Text = "Нарисовать";
             DrawB.UseVisualStyleBackColor = true;
+            DrawB.Click += DrawB_Click;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.DarkGray;
+            panel14.Controls.Add(label22);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new Point(0, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(600, 68);
+            panel14.TabIndex = 0;
+            // 
+            // label22
+            // 
+            label22.Dock = DockStyle.Top;
+            label22.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            label22.Location = new Point(0, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(600, 68);
+            label22.TabIndex = 5;
+            label22.Text = "Время на часах";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // T_in_W_hourTB
             // 
@@ -1025,81 +1104,64 @@
             T_in_W_hourTB.Size = new Size(55, 42);
             T_in_W_hourTB.TabIndex = 25;
             // 
-            // pictureBox1
+            // ques_T_in_W_P
             // 
-            pictureBox1.Location = new Point(217, 96);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(350, 350);
-            pictureBox1.TabIndex = 29;
-            pictureBox1.TabStop = false;
+            ques_T_in_W_P.BackColor = Color.LightGray;
+            ques_T_in_W_P.Controls.Add(panel16);
+            ques_T_in_W_P.Location = new Point(146, 509);
+            ques_T_in_W_P.Name = "ques_T_in_W_P";
+            ques_T_in_W_P.Size = new Size(400, 500);
+            ques_T_in_W_P.TabIndex = 10;
             // 
-            // SecondsTB
+            // panel16
             // 
-            SecondsTB.Cursor = Cursors.IBeam;
-            SecondsTB.Font = new Font("Segoe UI", 15F);
-            SecondsTB.Location = new Point(107, 128);
-            SecondsTB.MaxLength = 2;
-            SecondsTB.Multiline = true;
-            SecondsTB.Name = "SecondsTB";
-            SecondsTB.Size = new Size(50, 42);
-            SecondsTB.TabIndex = 23;
+            panel16.BackColor = Color.Silver;
+            panel16.Controls.Add(label27);
+            panel16.Controls.Add(label28);
+            panel16.Controls.Add(backTo_T_in_W_B);
+            panel16.Location = new Point(0, 12);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(400, 488);
+            panel16.TabIndex = 2;
             // 
-            // ErrorL3
+            // label27
             // 
-            ErrorL3.BackColor = Color.White;
-            ErrorL3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            ErrorL3.ForeColor = Color.Red;
-            ErrorL3.Location = new Point(14, 282);
-            ErrorL3.Name = "ErrorL3";
-            ErrorL3.Size = new Size(169, 85);
-            ErrorL3.TabIndex = 33;
+            label27.Location = new Point(16, 41);
+            label27.Name = "label27";
+            label27.Size = new Size(346, 216);
+            label27.TabIndex = 2;
+            label27.Text = resources.GetString("label27.Text");
             // 
-            // From_T_in_W_ToMenuB
+            // label28
             // 
-            From_T_in_W_ToMenuB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            From_T_in_W_ToMenuB.Location = new Point(3, 463);
-            From_T_in_W_ToMenuB.Name = "From_T_in_W_ToMenuB";
-            From_T_in_W_ToMenuB.Size = new Size(81, 34);
-            From_T_in_W_ToMenuB.TabIndex = 32;
-            From_T_in_W_ToMenuB.Text = "Меню";
-            From_T_in_W_ToMenuB.UseVisualStyleBackColor = true;
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label28.Location = new Point(18, 12);
+            label28.Name = "label28";
+            label28.Size = new Size(138, 23);
+            label28.TabIndex = 5;
+            label28.Text = "Время на часах";
             // 
-            // T_in_W_quesB
+            // backTo_T_in_W_B
             // 
-            T_in_W_quesB.Cursor = Cursors.Help;
-            T_in_W_quesB.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            T_in_W_quesB.Location = new Point(562, 461);
-            T_in_W_quesB.Name = "T_in_W_quesB";
-            T_in_W_quesB.Size = new Size(35, 35);
-            T_in_W_quesB.TabIndex = 31;
-            T_in_W_quesB.Text = "?";
-            T_in_W_quesB.UseVisualStyleBackColor = true;
-            // 
-            // panel13
-            // 
-            panel13.BackColor = Color.Silver;
-            panel13.Controls.Add(label23);
-            panel13.Location = new Point(14, 241);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(81, 35);
-            panel13.TabIndex = 30;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(5, 8);
-            label23.Name = "label23";
-            label23.Size = new Size(68, 20);
-            label23.TabIndex = 0;
-            label23.Text = "Ошибка:";
+            backTo_T_in_W_B.Dock = DockStyle.Bottom;
+            backTo_T_in_W_B.Font = new Font("Yu Gothic UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            backTo_T_in_W_B.Location = new Point(0, 449);
+            backTo_T_in_W_B.Name = "backTo_T_in_W_B";
+            backTo_T_in_W_B.Size = new Size(400, 39);
+            backTo_T_in_W_B.TabIndex = 4;
+            backTo_T_in_W_B.Text = "Назад";
+            backTo_T_in_W_B.UseVisualStyleBackColor = true;
+            backTo_T_in_W_B.Click += backTo_T_in_W_B_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1761, 916);
-            Controls.Add(panel11);
+            ClientSize = new Size(1761, 991);
+            Controls.Add(ques_T_in_W_P);
+            Controls.Add(T_in_W_P);
             Controls.Add(QuesRealAgeP);
             Controls.Add(RealAgeP);
             Controls.Add(TimeAndSecsP);
@@ -1144,12 +1206,15 @@
             QuesRealAgeP.ResumeLayout(false);
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            T_in_W_P.ResumeLayout(false);
+            T_in_W_P.PerformLayout();
             panel13.ResumeLayout(false);
             panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel14.ResumeLayout(false);
+            ques_T_in_W_P.ResumeLayout(false);
+            panel16.ResumeLayout(false);
+            panel16.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1231,7 +1296,7 @@
         private Label label20;
         private Label label21;
         private Button BackToRealAgeB;
-        private Panel panel11;
+        private Panel T_in_W_P;
         private Panel panel14;
         private Label label22;
         private TextBox T_in_W_minTB;
@@ -1244,5 +1309,10 @@
         private Button T_in_W_quesB;
         private Panel panel13;
         private Label label23;
+        private Panel ques_T_in_W_P;
+        private Panel panel16;
+        private Label label27;
+        private Label label28;
+        private Button backTo_T_in_W_B;
     }
 }

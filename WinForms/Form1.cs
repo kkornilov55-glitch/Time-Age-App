@@ -9,7 +9,7 @@ namespace WinForms2
             InitializeComponent();
 
             // Список всех панелей, которые должны быть на форме
-            Panel[] panels = { MenuP, QuestionsP, TimeAndSecsP, QuestionsS_TP, RealAgeP, QuesRealAgeP };
+            Panel[] panels = { MenuP, QuestionsP, TimeAndSecsP, QuestionsS_TP, RealAgeP, QuesRealAgeP, T_in_W_P, ques_T_in_W_P };
 
             foreach (var p in panels)
             {
@@ -37,9 +37,12 @@ namespace WinForms2
             TimeAndSecsP.Visible = false;
             RealAgeP.Visible = false;
             QuesRealAgeP.Visible = false;
+            T_in_W_P.Visible = false;
+            ques_T_in_W_P.Visible = false;
 
             panel.Visible = true;
             //panel.Dock = DockStyle.Fill; //Пытался просто растянуть панель по окну
+            this.ClientSize = panel.Size;
         }
 
         //МЕНЮ
@@ -61,6 +64,12 @@ namespace WinForms2
         private void AgeCalcB_Click(object sender, EventArgs e)
         {
             OpenNeedPanel(RealAgeP); //Переход к окну 2 задания
+        }
+
+        private void WatchPaintB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(T_in_W_P); //Переход к окну 3 задания
+            //this.ClientSize = T_in_W_P.Size;
         }
 
 
@@ -162,13 +171,7 @@ namespace WinForms2
             //Уборка
             ResultOrErrorAgeL.Text = null;
 
-            //if (DayTB.Text == "" || MonthTB.Text == "" || YearTB.Text == "")
-            //{
-
-            //}
-
             string[] spawnDate = { DayTB.Text, MonthTB.Text, YearTB.Text };
-
 
             Age age = new Age();
             ResultOrErrorAgeL.Text = age.CalcAge(spawnDate);
@@ -177,6 +180,31 @@ namespace WinForms2
                 ResultOrErrorAgeL.ForeColor = Color.Red;
             else
                 ResultOrErrorAgeL.ForeColor = Color.Black;
+        }
+
+
+        //3 задание
+
+        private void DrawB_Click(object sender, EventArgs e)
+        {
+            //Основная логика
+        }
+
+        private void From_T_in_W_ToMenuB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(MenuP); //Возврат к меню
+        }
+
+        private void T_in_W_quesB_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(ques_T_in_W_P); //Окно справки (3 задание)
+            //this.ClientSize = ques_T_in_W_P.Size;
+        }
+
+        private void backTo_T_in_W_B_Click(object sender, EventArgs e)
+        {
+            OpenNeedPanel(T_in_W_P); //Возврат к основному окну
+            //this.ClientSize = T_in_W_P.Size;
         }
     }
 }
