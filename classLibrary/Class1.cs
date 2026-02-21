@@ -155,7 +155,7 @@ namespace APP
             }
             else
             {
-                if (spawnMonth > 31)
+                if (spawnDay > 31)
                 {
                     flagError = true;
                     return "В данном месяце всего 31 день!";
@@ -271,11 +271,5 @@ namespace APP
 
             return tempDays; //Количество полных дней
         }
-    }
-    public class Watch()
-    {
-        public bool flagError = false;
-
-        
     }
 }
