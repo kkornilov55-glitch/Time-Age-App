@@ -111,7 +111,7 @@
             T_in_W_quesB = new Button();
             panel13 = new Panel();
             label23 = new Label();
-            pictureBox1 = new PictureBox();
+            WatchPB = new PictureBox();
             T_in_W_minTB = new TextBox();
             T_in_W_secsTB = new TextBox();
             DrawB = new Button();
@@ -147,7 +147,7 @@
             panel12.SuspendLayout();
             T_in_W_P.SuspendLayout();
             panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)WatchPB).BeginInit();
             panel14.SuspendLayout();
             ques_T_in_W_P.SuspendLayout();
             panel16.SuspendLayout();
@@ -967,7 +967,7 @@
             T_in_W_P.Controls.Add(From_T_in_W_ToMenuB);
             T_in_W_P.Controls.Add(T_in_W_quesB);
             T_in_W_P.Controls.Add(panel13);
-            T_in_W_P.Controls.Add(pictureBox1);
+            T_in_W_P.Controls.Add(WatchPB);
             T_in_W_P.Controls.Add(T_in_W_minTB);
             T_in_W_P.Controls.Add(T_in_W_secsTB);
             T_in_W_P.Controls.Add(DrawB);
@@ -1029,13 +1029,14 @@
             label23.TabIndex = 0;
             label23.Text = "Ошибка:";
             // 
-            // pictureBox1
+            // WatchPB
             // 
-            pictureBox1.Location = new Point(217, 96);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(350, 350);
-            pictureBox1.TabIndex = 29;
-            pictureBox1.TabStop = false;
+            WatchPB.Location = new Point(220, 71);
+            WatchPB.Name = "WatchPB";
+            WatchPB.Size = new Size(350, 350);
+            WatchPB.TabIndex = 29;
+            WatchPB.TabStop = false;
+            WatchPB.Paint += WatchPB_Paint;
             // 
             // T_in_W_minTB
             // 
@@ -1210,7 +1211,7 @@
             T_in_W_P.PerformLayout();
             panel13.ResumeLayout(false);
             panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)WatchPB).EndInit();
             panel14.ResumeLayout(false);
             ques_T_in_W_P.ResumeLayout(false);
             panel16.ResumeLayout(false);
@@ -1303,7 +1304,7 @@
         private TextBox T_in_W_secsTB;
         private Button DrawB;
         private TextBox T_in_W_hourTB;
-        private PictureBox pictureBox1;
+        private PictureBox WatchPB;
         private TextBox SecondsTB;
         private Button From_T_in_W_ToMenuB;
         private Button T_in_W_quesB;
